@@ -1,13 +1,13 @@
 import logging
-from transformers import BlipProcessor, BlipForConditionalGeneration
+from transformers import Blip2Processor, Blip2ForConditionalGeneration
 
 logger = logging.getLogger(__name__)
 
 def load_model(model_name):
     try:
         # Load the pre-trained BLIP model for image-to-text captioning
-        processor = BlipProcessor.from_pretrained(model_name)
-        model = BlipForConditionalGeneration.from_pretrained(model_name)
+        processor = Blip2Processor.from_pretrained(model_name)
+        model = Blip2ForConditionalGeneration.from_pretrained(model_name)
         logger.info(f"Loaded model: {model_name}")
         return model, processor
     except Exception as e:
