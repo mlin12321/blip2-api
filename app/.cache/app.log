@@ -1,0 +1,1315 @@
+2024-05-15 21:15:19,447 - app.model - ERROR - Error during caption generation
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/model.py", line 35, in generate_caption
+    assert len(opened_images) == len(prompts), "Number of images and prompts must match, got {} and {}".format(len(opened_images), len(prompts))
+                                 ^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+2024-05-15 21:18:12,510 - app.model - ERROR - Error during caption generation
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/model.py", line 35, in generate_caption
+    assert len(opened_images) == len(prompts), "Number of images and prompts must match, got {} and {}".format(len(opened_images), len(prompts))
+                                 ^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+2024-05-15 21:18:28,599 - app.model - ERROR - Error during caption generation
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/model.py", line 35, in generate_caption
+    assert len(opened_images) == len(prompts), "Number of images and prompts must match, got {} and {}".format(len(opened_images), len(prompts))
+                                 ^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+2024-05-15 21:20:32,004 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 00:44:12,734 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 00:44:52,581 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 00:46:59,557 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 00:47:57,555 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 00:48:32,276 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 00:52:58,049 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 00:53:25,353 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 00:54:20,313 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 01:45:47,215 - app.model - ERROR - Error during caption generation
+Traceback (most recent call last):
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 748, in convert_to_tensors
+    tensor = as_tensor(value)
+             ^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 720, in as_tensor
+    return torch.tensor(value)
+           ^^^^^^^^^^^^^^^^^^^
+ValueError: expected sequence of length 9 at dim 1 (got 7)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/model.py", line 39, in generate_caption
+    inputs = processor(images=opened_images, text = prompts, return_tensors="pt").to(device, dtype)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/models/blip_2/processing_blip_2.py", line 107, in __call__
+    text_encoding = self.tokenizer(
+                    ^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2806, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2892, in _call_one
+    return self.batch_encode_plus(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3083, in batch_encode_plus
+    return self._batch_encode_plus(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 520, in _batch_encode_plus
+    return BatchEncoding(sanitized_tokens, sanitized_encodings, tensor_type=return_tensors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 223, in __init__
+    self.convert_to_tensors(tensor_type=tensor_type, prepend_batch_axis=prepend_batch_axis)
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 764, in convert_to_tensors
+    raise ValueError(
+ValueError: Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected).
+2024-05-16 01:48:56,675 - app.model - ERROR - Error during caption generation
+Traceback (most recent call last):
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 748, in convert_to_tensors
+    tensor = as_tensor(value)
+             ^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 720, in as_tensor
+    return torch.tensor(value)
+           ^^^^^^^^^^^^^^^^^^^
+ValueError: expected sequence of length 9 at dim 1 (got 7)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/model.py", line 39, in generate_caption
+    inputs = processor(images=opened_images, text=prompts, return_tensors="pt").to(device, dtype)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/models/blip_2/processing_blip_2.py", line 107, in __call__
+    text_encoding = self.tokenizer(
+                    ^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2806, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2892, in _call_one
+    return self.batch_encode_plus(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3083, in batch_encode_plus
+    return self._batch_encode_plus(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 520, in _batch_encode_plus
+    return BatchEncoding(sanitized_tokens, sanitized_encodings, tensor_type=return_tensors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 223, in __init__
+    self.convert_to_tensors(tensor_type=tensor_type, prepend_batch_axis=prepend_batch_axis)
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 764, in convert_to_tensors
+    raise ValueError(
+ValueError: Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected).
+2024-05-16 01:49:04,879 - app.model - ERROR - Error during caption generation
+Traceback (most recent call last):
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 748, in convert_to_tensors
+    tensor = as_tensor(value)
+             ^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 720, in as_tensor
+    return torch.tensor(value)
+           ^^^^^^^^^^^^^^^^^^^
+ValueError: expected sequence of length 9 at dim 1 (got 7)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/model.py", line 39, in generate_caption
+    inputs = processor(images=opened_images, text=prompts, return_tensors="pt").to(device, dtype)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/models/blip_2/processing_blip_2.py", line 107, in __call__
+    text_encoding = self.tokenizer(
+                    ^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2806, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2892, in _call_one
+    return self.batch_encode_plus(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3083, in batch_encode_plus
+    return self._batch_encode_plus(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 520, in _batch_encode_plus
+    return BatchEncoding(sanitized_tokens, sanitized_encodings, tensor_type=return_tensors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 223, in __init__
+    self.convert_to_tensors(tensor_type=tensor_type, prepend_batch_axis=prepend_batch_axis)
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 764, in convert_to_tensors
+    raise ValueError(
+ValueError: Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected).
+2024-05-16 01:53:54,215 - app.model - ERROR - Error during caption generation
+Traceback (most recent call last):
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 748, in convert_to_tensors
+    tensor = as_tensor(value)
+             ^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 720, in as_tensor
+    return torch.tensor(value)
+           ^^^^^^^^^^^^^^^^^^^
+ValueError: expected sequence of length 9 at dim 1 (got 7)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/model.py", line 39, in generate_caption
+    inputs = processor(images=opened_images, text=prompts, return_tensors="pt").to(device, dtype)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/models/blip_2/processing_blip_2.py", line 107, in __call__
+    text_encoding = self.tokenizer(
+                    ^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2806, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2892, in _call_one
+    return self.batch_encode_plus(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3083, in batch_encode_plus
+    return self._batch_encode_plus(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 520, in _batch_encode_plus
+    return BatchEncoding(sanitized_tokens, sanitized_encodings, tensor_type=return_tensors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 223, in __init__
+    self.convert_to_tensors(tensor_type=tensor_type, prepend_batch_axis=prepend_batch_axis)
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 764, in convert_to_tensors
+    raise ValueError(
+ValueError: Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected).
+2024-05-16 12:34:38,020 - app.model - ERROR - Error during caption generation
+Traceback (most recent call last):
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 748, in convert_to_tensors
+    tensor = as_tensor(value)
+             ^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 720, in as_tensor
+    return torch.tensor(value)
+           ^^^^^^^^^^^^^^^^^^^
+ValueError: expected sequence of length 9 at dim 1 (got 7)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/model.py", line 39, in generate_caption
+    inputs = processor(images=opened_images, text=prompts, return_tensors="pt").to(device, dtype)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/models/blip_2/processing_blip_2.py", line 107, in __call__
+    text_encoding = self.tokenizer(
+                    ^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2806, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2892, in _call_one
+    return self.batch_encode_plus(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3083, in batch_encode_plus
+    return self._batch_encode_plus(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 520, in _batch_encode_plus
+    return BatchEncoding(sanitized_tokens, sanitized_encodings, tensor_type=return_tensors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 223, in __init__
+    self.convert_to_tensors(tensor_type=tensor_type, prepend_batch_axis=prepend_batch_axis)
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 764, in convert_to_tensors
+    raise ValueError(
+ValueError: Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected).
+2024-05-16 12:39:55,392 - app.model - ERROR - Error during caption generation
+Traceback (most recent call last):
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 748, in convert_to_tensors
+    tensor = as_tensor(value)
+             ^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 720, in as_tensor
+    return torch.tensor(value)
+           ^^^^^^^^^^^^^^^^^^^
+ValueError: expected sequence of length 9 at dim 1 (got 7)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/model.py", line 40, in generate_caption
+    inputs = processor(images=opened_images, text=prompts, return_tensors="pt").to(device, dtype)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/models/blip_2/processing_blip_2.py", line 107, in __call__
+    text_encoding = self.tokenizer(
+                    ^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2806, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2892, in _call_one
+    return self.batch_encode_plus(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3083, in batch_encode_plus
+    return self._batch_encode_plus(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 520, in _batch_encode_plus
+    return BatchEncoding(sanitized_tokens, sanitized_encodings, tensor_type=return_tensors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 223, in __init__
+    self.convert_to_tensors(tensor_type=tensor_type, prepend_batch_axis=prepend_batch_axis)
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 764, in convert_to_tensors
+    raise ValueError(
+ValueError: Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected).
+2024-05-16 12:40:18,257 - app.model - ERROR - Error during caption generation
+Traceback (most recent call last):
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 748, in convert_to_tensors
+    tensor = as_tensor(value)
+             ^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 720, in as_tensor
+    return torch.tensor(value)
+           ^^^^^^^^^^^^^^^^^^^
+ValueError: expected sequence of length 9 at dim 1 (got 7)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/model.py", line 40, in generate_caption
+    inputs = processor(images=opened_images, text=prompts, return_tensors="pt").to(device, dtype)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/models/blip_2/processing_blip_2.py", line 107, in __call__
+    text_encoding = self.tokenizer(
+                    ^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2806, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2892, in _call_one
+    return self.batch_encode_plus(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3083, in batch_encode_plus
+    return self._batch_encode_plus(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 520, in _batch_encode_plus
+    return BatchEncoding(sanitized_tokens, sanitized_encodings, tensor_type=return_tensors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 223, in __init__
+    self.convert_to_tensors(tensor_type=tensor_type, prepend_batch_axis=prepend_batch_axis)
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 764, in convert_to_tensors
+    raise ValueError(
+ValueError: Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected).
+2024-05-16 12:43:24,330 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 12:43:40,289 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 12:46:26,001 - app.model - ERROR - Error during caption generation
+Traceback (most recent call last):
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 748, in convert_to_tensors
+    tensor = as_tensor(value)
+             ^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 720, in as_tensor
+    return torch.tensor(value)
+           ^^^^^^^^^^^^^^^^^^^
+ValueError: expected sequence of length 9 at dim 1 (got 7)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/model.py", line 40, in generate_caption
+    inputs = processor(images=opened_images, text=prompts, return_tensors="pt").to(device, dtype)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/models/blip_2/processing_blip_2.py", line 107, in __call__
+    text_encoding = self.tokenizer(
+                    ^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2806, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2892, in _call_one
+    return self.batch_encode_plus(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3083, in batch_encode_plus
+    return self._batch_encode_plus(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 520, in _batch_encode_plus
+    return BatchEncoding(sanitized_tokens, sanitized_encodings, tensor_type=return_tensors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 223, in __init__
+    self.convert_to_tensors(tensor_type=tensor_type, prepend_batch_axis=prepend_batch_axis)
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 764, in convert_to_tensors
+    raise ValueError(
+ValueError: Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected).
+2024-05-16 12:52:58,178 - app.model - INFO - Generated caption: ['a cat with green eyes', 'a golden retriever puppy sitting in the grass']
+2024-05-16 12:53:19,531 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 13:10:27,396 - app.main - ERROR - Error in /caption endpoint
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/main.py", line 48, in caption
+    image_bytes = pil_image_to_bytes(raw_image)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/main.py", line 30, in pil_image_to_bytes
+    image_byte_arr = io.bytesIO()
+                     ^^^^^^^^^^
+  File "<frozen io>", line 74, in __getattr__
+AttributeError: module 'io' has no attribute 'bytesIO'
+2024-05-16 13:12:39,821 - app.main - ERROR - Error in /caption endpoint
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/main.py", line 48, in caption
+    image_bytes = pil_image_to_bytes(raw_image)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/main.py", line 30, in pil_image_to_bytes
+    image_byte_arr = io.bytesIO()
+                     ^^^^^^^^^^
+  File "<frozen io>", line 74, in __getattr__
+AttributeError: module 'io' has no attribute 'bytesIO'
+2024-05-16 13:22:08,353 - app.main - ERROR - Error in /caption endpoint
+Traceback (most recent call last):
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/PIL/Image.py", line 2390, in save
+    format = EXTENSION[ext]
+             ~~~~~~~~~^^^^^
+KeyError: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/main.py", line 48, in caption
+    image_bytes = pil_image_to_bytes(raw_image)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/main.py", line 31, in pil_image_to_bytes
+    image.save(image_byte_arr)
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/PIL/Image.py", line 2393, in save
+    raise ValueError(msg) from e
+ValueError: unknown file extension: 
+2024-05-16 13:26:04,301 - app.main - ERROR - Error in /caption endpoint
+Traceback (most recent call last):
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/PIL/Image.py", line 2390, in save
+    format = EXTENSION[ext]
+             ~~~~~~~~~^^^^^
+KeyError: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/main.py", line 48, in caption
+    image_bytes = pil_image_to_bytes(raw_image)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/main.py", line 31, in pil_image_to_bytes
+    image.save(image_byte_arr)
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/PIL/Image.py", line 2393, in save
+    raise ValueError(msg) from e
+ValueError: unknown file extension: 
+2024-05-16 13:29:20,989 - app.main - ERROR - Error in /caption endpoint
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/main.py", line 47, in caption
+    image_bytes = pil_image_to_bytes(image)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/main.py", line 31, in pil_image_to_bytes
+    image.save(image_byte_arr)
+    ^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'save'
+2024-05-16 13:36:04,248 - app.main - ERROR - Error in /caption endpoint
+Traceback (most recent call last):
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/PIL/Image.py", line 2390, in save
+    format = EXTENSION[ext]
+             ~~~~~~~~~^^^^^
+KeyError: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/main.py", line 49, in caption
+    image_bytes = pil_image_to_bytes(raw_image, file_exten)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/main.py", line 31, in pil_image_to_bytes
+    image.save(image_byte_arr)
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/PIL/Image.py", line 2393, in save
+    raise ValueError(msg) from e
+ValueError: unknown file extension: 
+2024-05-16 13:38:23,512 - app.main - ERROR - Error in /caption endpoint
+Traceback (most recent call last):
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/PIL/Image.py", line 2390, in save
+    format = EXTENSION[ext]
+             ~~~~~~~~~^^^^^
+KeyError: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/main.py", line 49, in caption
+    image_bytes = pil_image_to_bytes(raw_image, file_exten)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/main.py", line 31, in pil_image_to_bytes
+    image.save(image_byte_arr)
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/PIL/Image.py", line 2393, in save
+    raise ValueError(msg) from e
+ValueError: unknown file extension: 
+2024-05-16 13:40:39,453 - app.main - ERROR - Error in /caption endpoint
+Traceback (most recent call last):
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/PIL/Image.py", line 2390, in save
+    format = EXTENSION[ext]
+             ~~~~~~~~~^^^^^
+KeyError: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/main.py", line 50, in caption
+    image_bytes = pil_image_to_bytes(raw_image, file_exten)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/main.py", line 31, in pil_image_to_bytes
+    image.save(image_byte_arr)
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/PIL/Image.py", line 2393, in save
+    raise ValueError(msg) from e
+ValueError: unknown file extension: 
+2024-05-16 13:42:43,116 - app.main - ERROR - Error in /caption endpoint
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/main.py", line 50, in caption
+    image_bytes = pil_image_to_bytes(raw_image, file_exten)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/main.py", line 31, in pil_image_to_bytes
+    image.save(image_byte_arr, format=format)
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/PIL/Image.py", line 2400, in save
+    save_handler = SAVE[format.upper()]
+                   ~~~~^^^^^^^^^^^^^^^^
+KeyError: 'JPG'
+2024-05-16 13:45:58,261 - app.model - ERROR - Error during caption generation
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/model.py", line 43, in generate_caption
+    inputs = processor(images=opened_images, text=prompts, return_tensors="pt").to(device, dtype)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/models/blip_2/processing_blip_2.py", line 104, in __call__
+    encoding_image_processor = self.image_processor(images, return_tensors=return_tensors)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/image_processing_utils.py", line 546, in __call__
+    return self.preprocess(images, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/models/blip/image_processing_blip.py", line 234, in preprocess
+    images = make_list_of_images(images)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/transformers/image_utils.py", line 145, in make_list_of_images
+    raise ValueError(
+ValueError: Invalid image type. Expected either PIL.Image.Image, numpy.ndarray, torch.Tensor, tf.Tensor or jax.ndarray, but got <class 'list'>.
+2024-05-16 13:51:20,103 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 14:15:15,179 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 14:15:32,822 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 14:16:21,480 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 14:23:13,427 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 14:28:40,867 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 14:29:01,653 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 14:58:39,007 - app.main - ERROR - Error in /caption endpoint
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/utils.py", line 6, in load_image_from_file
+    image = Image.open(io.BytesIO(file_data)).convert('RGB')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/PIL/Image.py", line 3280, in open
+    raise UnidentifiedImageError(msg)
+PIL.UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x7f3db50515d0>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/main.py", line 40, in caption
+    loaded_image = load_image_from_file(await image.read())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/utils.py", line 9, in load_image_from_file
+    raise ValueError("Invalid image data") from e
+ValueError: Invalid image data
+2024-05-16 14:59:41,980 - app.main - ERROR - Error in /caption endpoint
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/utils.py", line 6, in load_image_from_file
+    image = Image.open(io.BytesIO(file_data)).convert('RGB')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lin.3976/miniconda3/envs/colab/lib/python3.11/site-packages/PIL/Image.py", line 3280, in open
+    raise UnidentifiedImageError(msg)
+PIL.UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x7f3d74a54130>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/main.py", line 40, in caption
+    loaded_image = load_image_from_file(await image.read())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/utils.py", line 9, in load_image_from_file
+    raise ValueError("Invalid image data") from e
+ValueError: Invalid image data
+2024-05-16 15:03:04,857 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 15:03:21,438 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 15:03:28,455 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 15:03:39,100 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 15:37:03,829 - app.model - ERROR - Error during caption generation
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/model.py", line 38, in generate_caption
+    assert len(opened_images) == len(prompts), "Number of images and prompts must match"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Number of images and prompts must match
+2024-05-16 15:37:37,956 - app.model - ERROR - Error during caption generation
+Traceback (most recent call last):
+  File "/local/scratch/lin.3976/web_eval/blip2-api/app/model.py", line 38, in generate_caption
+    assert len(opened_images) == len(prompts), "Number of images and prompts must match"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Number of images and prompts must match
+2024-05-16 15:39:50,416 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 15:39:56,835 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 15:40:01,309 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 15:41:41,075 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 16:04:13,708 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 16:43:29,656 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 16:43:38,483 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 16:45:29,600 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 16:46:23,399 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 16:49:45,111 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 20:12:01,051 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 20:12:10,077 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 20:13:23,365 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 20:13:35,534 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 20:13:46,253 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 20:29:07,372 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 20:29:22,015 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 20:31:40,388 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 20:31:43,167 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 20:33:57,340 - app.model - INFO - Generated caption: ['a wooden cutting board with a pumpkin on it', 'a person holding a red fruit with seeds in it', 'a pizza with a slice missing', 'a bowl of noodles with meat and greens']
+2024-05-16 20:33:57,870 - app.model - INFO - Generated caption: ['a sushi tray with a variety of different sushi', 'a plate of fried chicken and a bottle of wine', 'a person holding a plate of waffles', 'a plate of fried doughnuts on a table']
+2024-05-16 20:33:58,372 - app.model - INFO - Generated caption: ['a plate with an orange on it', 'a rack of bread sitting on top of a stove', 'a plate with bacon, eggs and toast', 'two fried gnocchi with tomato sauce on a plate']
+2024-05-16 20:33:58,999 - app.model - INFO - Generated caption: ['a plate of toast with avocado and sauce', 'a white cake with a bow on top', 'a plate of meat and cheese enchiladas with dipping sauce', 'a chocolate cake with a slice taken out']
+2024-05-16 20:33:59,584 - app.model - INFO - Generated caption: ['a tray of bread rolls on a counter', 'a bowl of chicken wings on a wooden table', 'a bowl of ramen with eggs and noodles on a table', 'a plate of french toast with bacon and eggs']
+2024-05-16 20:34:00,114 - app.model - INFO - Generated caption: ['a large roll with a slice of cheese on top', 'a pan of buns on a stove top', 'a plate with chicken wings and celery', 'a cake with a caramel topping on top']
+2024-05-16 20:34:00,655 - app.model - INFO - Generated caption: ['a stack of quesadillas on a wooden board']
+2024-05-16 20:34:14,306 - app.model - INFO - Generated caption: ['a box of sushi on a table']
+2024-05-16 20:34:33,373 - app.model - INFO - Generated caption: ['a box of sushi on a table']
+2024-05-16 20:34:37,956 - app.model - INFO - Generated caption: ['a box of sushi on a table']
+2024-05-16 20:34:39,881 - app.model - INFO - Generated caption: ['a box of sushi on a table']
+2024-05-16 20:34:45,997 - app.model - INFO - Generated caption: ['a box of sushi on a table']
+2024-05-16 20:34:52,050 - app.model - INFO - Generated caption: ['a box of sushi on a table']
+2024-05-16 20:52:22,390 - app.model - INFO - Generated caption: ['a white blanket', 'grass']
+2024-05-16 20:52:31,262 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 20:52:36,669 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white background', 'a golden retriever puppy sitting in the grass']
+2024-05-16 20:52:41,798 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white', 'a golden retriever puppy sitting in the grass']
+2024-05-16 20:55:47,085 - app.model - INFO - Generated caption: ['a cat with green eyes is sitting on a white', 'a golden retriever puppy sitting in the grass']
+2024-05-16 21:01:34,603 - app.model - INFO - Generated caption: ['a wooden cutting board with a pumpkin on it', 'a person holding a red fruit with seeds in it', 'a pizza with a slice missing', 'a bowl of noodles with meat and greens']
+2024-05-16 21:01:35,125 - app.model - INFO - Generated caption: ['a sushi tray with a variety of different sushi', 'a plate of fried chicken and a bottle of wine', 'a person holding a plate of waffles', 'a plate of fried doughnuts on a table']
+2024-05-16 21:01:35,687 - app.model - INFO - Generated caption: ['a plate with an orange on it', 'a rack of bread sitting on top of a stove', 'a plate with bacon, eggs and toast', 'two fried gnocchi with tomato sauce on a plate']
+2024-05-16 21:01:36,318 - app.model - INFO - Generated caption: ['a plate of toast with avocado and sauce', 'a white cake with a bow on top', 'a plate of meat and cheese enchiladas with dipping sauce', 'a chocolate cake with a slice taken out']
+2024-05-16 21:01:36,901 - app.model - INFO - Generated caption: ['a tray of bread rolls on a counter', 'a bowl of chicken wings on a wooden table', 'a bowl of ramen with eggs and noodles on a table', 'a plate of french toast with bacon and eggs']
+2024-05-16 21:01:37,425 - app.model - INFO - Generated caption: ['a large roll with a slice of cheese on top', 'a pan of buns on a stove top', 'a plate with chicken wings and celery', 'a cake with a caramel topping on top']
+2024-05-16 21:01:37,965 - app.model - INFO - Generated caption: ['a stack of quesadillas on a wooden board']
+2024-05-16 21:01:51,141 - app.model - INFO - Generated caption: ['a box of sushi on a table']
+2024-05-16 21:01:58,000 - app.model - INFO - Generated caption: ['a box of sushi on a table']
+2024-05-16 21:02:03,669 - app.model - INFO - Generated caption: ['a box of sushi on a table']
+2024-05-16 21:02:09,228 - app.model - INFO - Generated caption: ['a box of sushi on a table']
+2024-05-16 21:02:14,826 - app.model - INFO - Generated caption: ['a box of sushi on a table']
+2024-05-16 21:02:28,954 - app.model - INFO - Generated caption: ['a wooden cutting board with a pumpkin on it', 'a person holding a red fruit with seeds in it', 'a pizza with a slice missing', 'a bowl of noodles with meat and greens']
+2024-05-16 21:02:29,453 - app.model - INFO - Generated caption: ['a sushi tray with a variety of different sushi', 'a plate of fried chicken and a bottle of wine', 'a person holding a plate of waffles', 'a plate of fried doughnuts on a table']
+2024-05-16 21:02:29,986 - app.model - INFO - Generated caption: ['a plate with an orange on it', 'a rack of bread sitting on top of a stove', 'a plate with bacon, eggs and toast', 'two fried gnocchi with tomato sauce on a plate']
+2024-05-16 21:02:30,580 - app.model - INFO - Generated caption: ['a plate of toast with avocado and sauce', 'a white cake with a bow on top', 'a plate of meat and cheese enchiladas with dipping sauce', 'a chocolate cake with a slice taken out']
+2024-05-16 21:02:31,144 - app.model - INFO - Generated caption: ['a tray of bread rolls on a counter', 'a bowl of chicken wings on a wooden table', 'a bowl of ramen with eggs and noodles on a table', 'a plate of french toast with bacon and eggs']
+2024-05-16 21:02:31,622 - app.model - INFO - Generated caption: ['a large roll with a slice of cheese on top', 'a pan of buns on a stove top', 'a plate with chicken wings and celery', 'a cake with a caramel topping on top']
+2024-05-16 21:02:32,105 - app.model - INFO - Generated caption: ['a stack of quesadillas on a wooden board']
+2024-05-16 21:02:44,678 - app.model - INFO - Generated caption: ['a plate of food on a table']
+2024-05-16 21:03:03,039 - app.model - INFO - Generated caption: ['a plate of food on a table']
+2024-05-16 21:03:20,698 - app.model - INFO - Generated caption: ['a plate of food on a table']
+2024-05-16 21:03:37,948 - app.model - INFO - Generated caption: ['a plate of food on a table']
+2024-05-16 21:03:55,804 - app.model - INFO - Generated caption: ['a cake with a chocolate icing on top']
+2024-05-16 21:04:50,369 - app.model - INFO - Generated caption: ['a plate of food on a table']
+2024-05-16 21:06:04,940 - app.model - INFO - Generated caption: ['a plate of food on a table']
+2024-05-16 21:07:19,141 - app.model - INFO - Generated caption: ['a plate of food on a table']
+2024-05-16 21:08:45,509 - app.model - INFO - Generated caption: ['the poster for the movie, pittsburgh square', 'the poster for animal', 'a group of people standing in front of a building']
+2024-05-16 21:08:55,891 - app.model - INFO - Generated caption: ['a group of people standing in front of a police car']
+2024-05-16 21:09:12,313 - app.model - INFO - Generated caption: ['a group of people standing in front of a police car']
+2024-05-16 21:09:19,331 - app.model - INFO - Generated caption: ['the poster for the movie, pittsburgh square', 'the poster for animal', 'a group of people standing in front of a building']
+2024-05-16 21:09:28,864 - app.model - INFO - Generated caption: ['a group of people standing in front of a police car']
+2024-05-16 21:09:45,090 - app.model - INFO - Generated caption: ['a group of people standing in front of a police car']
+2024-05-16 21:10:00,354 - app.model - INFO - Generated caption: ['a group of people standing in front of a police car']
+2024-05-16 21:10:17,068 - app.model - INFO - Generated caption: ['a group of people standing in front of a police car']
+2024-05-16 21:10:21,773 - app.model - INFO - Generated caption: ['a group of people standing in front of a police car']
+2024-05-16 21:10:27,122 - app.model - INFO - Generated caption: ['a group of people standing in front of a police car']
+2024-05-16 21:10:32,720 - app.model - INFO - Generated caption: ['a group of people standing in front of a police car']
+2024-05-16 21:10:37,655 - app.model - INFO - Generated caption: ['a group of people standing in front of a police car']
+2024-05-16 21:10:42,832 - app.model - INFO - Generated caption: ['a group of people standing in front of a police car']
+2024-05-16 21:11:10,015 - app.model - INFO - Generated caption: ['a bowl of noodles with meat and vegetables']
+2024-05-16 21:11:14,937 - app.model - INFO - Generated caption: ['a bowl of noodles with meat and vegetables']
+2024-05-16 21:11:16,778 - app.model - INFO - Generated caption: ['a bowl of noodles with meat and vegetables']
+2024-05-16 21:11:35,358 - app.model - INFO - Generated caption: ['a bowl of noodles with meat and vegetables']
+2024-05-16 21:11:53,272 - app.model - INFO - Generated caption: ['a bowl of noodles with meat and vegetables']
+2024-05-16 21:11:58,216 - app.model - INFO - Generated caption: ['a person holding a donut with pecans and raisins']
+2024-05-16 21:11:59,777 - app.model - INFO - Generated caption: ['a bowl of noodles with meat and vegetables']
+2024-05-16 21:12:05,681 - app.model - INFO - Generated caption: ['a bowl of noodles with meat and vegetables']
+2024-05-16 21:12:11,467 - app.model - INFO - Generated caption: ['a bowl of noodles with meat and vegetables']
+2024-05-16 21:12:25,711 - app.model - INFO - Generated caption: ['a woman standing in a wheat field with buildings in the background']
+2024-05-16 21:12:31,743 - app.model - INFO - Generated caption: ['a woman standing in a wheat field with buildings in the background']
+2024-05-16 21:12:37,426 - app.model - INFO - Generated caption: ['a woman standing in a wheat field with buildings in the background']
+2024-05-16 21:12:43,000 - app.model - INFO - Generated caption: ['a woman standing in a wheat field with buildings in the background']
+2024-05-16 21:12:48,948 - app.model - INFO - Generated caption: ['a woman standing in a wheat field with buildings in the background']
+2024-05-16 21:12:54,710 - app.model - INFO - Generated caption: ['a woman standing in a wheat field with buildings in the background']
+2024-05-16 21:13:00,342 - app.model - INFO - Generated caption: ['a woman standing in a wheat field with buildings in the background']
+2024-05-16 21:13:06,165 - app.model - INFO - Generated caption: ['a woman standing in a wheat field with buildings in the background']
+2024-05-16 21:13:12,053 - app.model - INFO - Generated caption: ['a woman standing in a wheat field with buildings in the background']
+2024-05-16 21:13:17,626 - app.model - INFO - Generated caption: ['a woman standing in a wheat field with buildings in the background']
+2024-05-16 21:13:24,352 - app.model - INFO - Generated caption: ['a woman standing in a wheat field with buildings in the background']
+2024-05-16 21:14:04,503 - app.model - INFO - Generated caption: ['a comic strip about the brain']
+2024-05-16 21:14:10,173 - app.model - INFO - Generated caption: ['a comic strip about the brain']
+2024-05-16 21:14:24,957 - app.model - INFO - Generated caption: ['a comic strip about the brain']
+2024-05-16 21:14:40,265 - app.model - INFO - Generated caption: ['a comic strip about the brain']
+2024-05-16 21:14:46,418 - app.model - INFO - Generated caption: ['a comic strip about the brain']
+2024-05-16 21:14:53,304 - app.model - INFO - Generated caption: ['a city street with tall buildings and cars', 'a group of people walking down a path']
+2024-05-16 21:15:02,060 - app.model - INFO - Generated caption: ['a comic strip about the brain']
+2024-05-16 21:15:17,023 - app.model - INFO - Generated caption: ['a comic strip about the brain']
+2024-05-16 21:15:29,045 - app.model - INFO - Generated caption: ['a comic strip about the brain']
+2024-05-16 21:15:37,075 - app.model - INFO - Generated caption: ['a pan with food in it on a stove']
+2024-05-16 21:15:42,450 - app.model - INFO - Generated caption: ['a pan with food in it on a stove']
+2024-05-16 21:15:47,742 - app.model - INFO - Generated caption: ['a pan with food in it on a stove']
+2024-05-16 21:15:59,101 - app.model - INFO - Generated caption: ['a white cake with red and green decorations']
+2024-05-16 21:16:04,897 - app.model - INFO - Generated caption: ['a white cake with red and green decorations']
+2024-05-16 21:16:11,045 - app.model - INFO - Generated caption: ['a white cake with red and green decorations']
+2024-05-16 21:16:16,640 - app.model - INFO - Generated caption: ['a white cake with red and green decorations']
+2024-05-16 21:16:22,213 - app.model - INFO - Generated caption: ['a white cake with red and green decorations']
+2024-05-16 21:16:35,538 - app.model - INFO - Generated caption: ['a bowl of noodles with meat and vegetables']
+2024-05-16 21:16:41,046 - app.model - INFO - Generated caption: ['a bowl of noodles with meat and vegetables']
+2024-05-16 21:16:46,332 - app.model - INFO - Generated caption: ['a bowl of noodles with meat and vegetables']
+2024-05-16 21:16:51,205 - app.model - INFO - Generated caption: ['a bowl of noodles with meat and vegetables']
+2024-05-16 21:17:16,836 - app.model - INFO - Generated caption: ['a person is holding a piece of bread']
+2024-05-16 21:17:22,568 - app.model - INFO - Generated caption: ['a pumpkin bread on a wooden cutting board']
+2024-05-16 21:17:24,634 - app.model - INFO - Generated caption: ['a person is holding a piece of bread']
+2024-05-16 21:17:31,330 - app.model - INFO - Generated caption: ['a person is holding a piece of bread']
+2024-05-16 21:17:38,245 - app.model - INFO - Generated caption: ['a person is holding a piece of bread']
+2024-05-16 21:18:10,599 - app.model - INFO - Generated caption: ['a tray of fried pineapple cubes on a baking sheet']
+2024-05-16 21:18:28,918 - app.model - INFO - Generated caption: ['a tray of fried pineapple cubes on a baking sheet']
+2024-05-16 21:18:46,709 - app.model - INFO - Generated caption: ['a tray of fried pineapple cubes on a baking sheet']
+2024-05-16 21:19:11,442 - app.model - INFO - Generated caption: ['a view of the city from an airplane at night']
+2024-05-16 21:19:17,407 - app.model - INFO - Generated caption: ['a view of the city from an airplane at night']
+2024-05-16 21:19:23,504 - app.model - INFO - Generated caption: ['a view of the city from an airplane at night']
+2024-05-16 21:19:35,532 - app.model - INFO - Generated caption: ['time news - screenshot']
+2024-05-16 21:19:41,311 - app.model - INFO - Generated caption: ['time news - screenshot']
+2024-05-16 21:19:46,727 - app.model - INFO - Generated caption: ['time news - screenshot']
+2024-05-16 21:19:52,241 - app.model - INFO - Generated caption: ['time news - screenshot']
+2024-05-16 21:20:03,847 - app.model - INFO - Generated caption: ['a city street with tall buildings']
+2024-05-16 21:20:11,228 - app.model - INFO - Generated caption: ['a city street with tall buildings']
+2024-05-16 21:20:17,885 - app.model - INFO - Generated caption: ['a city street with tall buildings']
+2024-05-16 21:20:31,058 - app.model - INFO - Generated caption: ['a city street with cars and buildings']
+2024-05-16 21:20:41,824 - app.model - INFO - Generated caption: ['a blue jacket with a pocket and a tag', 'a kitchen with a stove and oven', 'a white stove in a kitchen', 'a small wooden box with a flower on it']
+2024-05-16 21:20:42,317 - app.model - INFO - Generated caption: ['a large wooden table with a mirror and chairs', 'a coffee maker is in a kitchen', 'a black clock', 'a slow cooker with meat and carrots on a counter']
+2024-05-16 21:20:42,799 - app.model - INFO - Generated caption: ['a white box on a table', 'two pairs of boots on a rug', 'a red and black vacuum cleaner', 'two washers and dryers in a garage']
+2024-05-16 21:20:43,331 - app.model - INFO - Generated caption: ['a tablecloth with a variety of vehicles on it', 'two blue plastic trays sitting on the ground', 'a stove in a garage with a stove top', 'a pot of food is on the stove']
+2024-05-16 21:20:43,873 - app.model - INFO - Generated caption: ['a black notebook with a pen on top', 'a microwave oven', 'a black casio g shock watch', 'a camera on a log with a view of the water']
+2024-05-16 21:20:44,354 - app.model - INFO - Generated caption: ['a truck with a plow', 'a person holding a cell phone in a box', 'two salt and pepper mills on a table', 'a sewing machine sitting on a table']
+2024-05-16 21:20:44,760 - app.model - INFO - Generated caption: ['a crock pot sitting on a counter top']
+2024-05-16 21:20:55,733 - app.model - INFO - Generated caption: ['a city street with cars and buildings']
+2024-05-16 21:21:14,969 - app.model - INFO - Generated caption: ['a city street with cars and buildings']
+2024-05-16 21:21:20,611 - app.model - INFO - Generated caption: ['a stove with a tea kettle on it']
+2024-05-16 21:21:22,118 - app.model - INFO - Generated caption: ['a city street with cars and buildings']
+2024-05-16 21:21:27,565 - app.model - INFO - Generated caption: ['a city street with cars and buildings']
+2024-05-16 21:21:33,000 - app.model - INFO - Generated caption: ['a city street with cars and buildings']
+2024-05-16 21:21:46,375 - app.model - INFO - Generated caption: ['a brown bear is sitting in the grass']
+2024-05-16 21:21:52,813 - app.model - INFO - Generated caption: ['a brown bear is sitting in the grass']
+2024-05-16 21:22:01,415 - app.model - INFO - Generated caption: ['a brown bear is sitting in the grass']
+2024-05-16 21:22:10,662 - app.model - INFO - Generated caption: ['a brown bear is sitting in the grass']
+2024-05-16 21:22:19,763 - app.model - INFO - Generated caption: ['a brown bear is sitting in the grass']
+2024-05-16 21:22:28,849 - app.model - INFO - Generated caption: ['a brown bear is sitting in the grass']
+2024-05-16 21:22:44,596 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:22:53,035 - app.model - INFO - Generated caption: ['two men standing in front of a large turkey', 'a bald eagle is perched on a branch with a bird on it', 'two people dressed up in costumes on the street', 'fireworks are lit up over the city skyline']
+2024-05-16 21:22:53,642 - app.model - INFO - Generated caption: ['a woman is working at a desk with stacks of papers', 'a group of people standing in front of a building', 'a man standing in front of a car with a bunch of bananas', 'a group of people holding signs in a street']
+2024-05-16 21:22:54,143 - app.model - INFO - Generated caption: ['a red frame with a picture of a woman', 'a vase with a woman and a man on it', 'a man in a car dressed as a phone', 'a collage of photos of men in different poses']
+2024-05-16 21:22:54,635 - app.model - INFO - Generated caption: ['a large purple and blue lobster with a purple tail', 'a man smiling while sitting on a couch', 'a man and woman standing next to each other at an event', 'a painting of a hamburger, fries and a drink']
+2024-05-16 21:22:55,185 - app.model - INFO - Generated caption: ['a painting of a train station with a blue train', 'a man sitting in a white chair with a hat on', 'a pair of scissors on a wooden table', 'a small island in the ocean with a blue sky']
+2024-05-16 21:22:55,800 - app.model - INFO - Generated caption: ['a sign with a picture of a dog', 'a yellow steering wheel with a bull head on it', 'a building with a red sign and trees', 'a group of men in kilts posing for a picture']
+2024-05-16 21:22:56,172 - app.model - INFO - Generated caption: ['a man standing next to a large colorful painting']
+2024-05-16 21:23:07,241 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:23:15,668 - app.model - INFO - Generated caption: ['two men standing in front of a large turkey', 'a bald eagle is perched on a branch with a bird on it', 'two people dressed up in costumes on the street', 'fireworks are lit up over the city skyline']
+2024-05-16 21:23:16,260 - app.model - INFO - Generated caption: ['a woman is working at a desk with stacks of papers', 'a group of people standing in front of a building', 'a man standing in front of a car with a bunch of bananas', 'a group of people holding signs in a street']
+2024-05-16 21:23:16,758 - app.model - INFO - Generated caption: ['a red frame with a picture of a woman', 'a vase with a woman and a man on it', 'a man in a car dressed as a phone', 'a collage of photos of men in different poses']
+2024-05-16 21:23:17,263 - app.model - INFO - Generated caption: ['a large purple and blue lobster with a purple tail', 'a man smiling while sitting on a couch', 'a man and woman standing next to each other at an event', 'a painting of a hamburger, fries and a drink']
+2024-05-16 21:23:17,774 - app.model - INFO - Generated caption: ['a painting of a train station with a blue train', 'a man sitting in a white chair with a hat on', 'a pair of scissors on a wooden table', 'a small island in the ocean with a blue sky']
+2024-05-16 21:23:18,427 - app.model - INFO - Generated caption: ['a sign with a picture of a dog', 'a yellow steering wheel with a bull head on it', 'a building with a red sign and trees', 'a group of men in kilts posing for a picture']
+2024-05-16 21:23:18,805 - app.model - INFO - Generated caption: ['a man standing next to a large colorful painting']
+2024-05-16 21:23:29,509 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:23:48,193 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:23:53,320 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:23:54,830 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:24:15,096 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:24:21,344 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:24:30,615 - app.model - INFO - Generated caption: ['a group of people writing', 'harry potter and the deathly hallows - harry potter and the deathly hallows - harry pot', 'a man is jumping on a blue box', 'a man with a beard is holding a painting']
+2024-05-16 21:24:31,294 - app.model - INFO - Generated caption: ['a man with a beard and a beard is wearing a beard', 'a child is standing in front of a blue wall', 'a cat is sitting on a couch with a cigarette', 'a man is shown in different poses']
+2024-05-16 21:24:31,790 - app.model - INFO - Generated caption: ['a diagram showing the stages of a light sensitive person', 'a man is jumping in front of a room', 'doctors realizing their profession is no longer a job', 'a woman is holding a phone and texting']
+2024-05-16 21:24:32,388 - app.model - INFO - Generated caption: ['a man is sitting on a train', 'a man sitting in the field waiting for the pacific video to play', 'the most fun person you know their best friend', 'a cartoon of a batgirl in a black costume']
+2024-05-16 21:24:32,978 - app.model - INFO - Generated caption: ['a girl in a school uniform is standing in front of a computer', 'a man in a green costume is holding a door', 'a cartoon of a woman with a pink head', 'a man is playing a game in a room']
+2024-05-16 21:24:33,844 - app.model - INFO - Generated caption: ['a jet is flying over a rock', 'a comic with a picture of a cartoon character', "a man is holding a plate with a caption that says, i'm a chef", 'a man is walking up the stairs with a caption that says when you come home drunk in the morning and start to move stairs']
+2024-05-16 21:24:44,537 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:24:51,214 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:25:09,988 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:25:28,307 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:25:46,490 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:25:53,608 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:25:59,811 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:26:17,782 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:26:23,998 - app.model - INFO - Generated caption: ['a painting of a box of food with a lemon in it', 'a jar of acorns and a jar of acorns', 'a painting of eggs and a copper bowl']
+2024-05-16 21:26:27,325 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:26:32,165 - app.model - INFO - Generated caption: ['a painting of a box of chinese food']
+2024-05-16 21:26:33,775 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:26:40,896 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:26:50,649 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:26:55,748 - app.model - INFO - Generated caption: ['two jars of jelly beans on a table']
+2024-05-16 21:26:57,395 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:27:03,696 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:27:09,912 - app.model - INFO - Generated caption: ['a painting of a burger and fries with flowers']
+2024-05-16 21:27:26,778 - app.model - INFO - Generated caption: ['a meme that says i get paid some money i have to save some money bullshit happens']
+2024-05-16 21:27:33,441 - app.model - INFO - Generated caption: ['a meme that says i get paid some money i have to save some money bullshit happens']
+2024-05-16 21:27:40,508 - app.model - INFO - Generated caption: ['a meme that says i get paid some money i have to save some money bullshit happens']
+2024-05-16 21:27:46,413 - app.model - INFO - Generated caption: ['a meme that says i get paid some money i have to save some money bullshit happens']
+2024-05-16 21:27:58,786 - app.model - INFO - Generated caption: ['a keyboard with colorful keys on it']
+2024-05-16 21:28:04,944 - app.model - INFO - Generated caption: ['a keyboard with colorful keys on it']
+2024-05-16 21:28:10,543 - app.model - INFO - Generated caption: ['a keyboard with colorful keys on it']
+2024-05-16 21:28:16,641 - app.model - INFO - Generated caption: ['a keyboard with colorful keys on it']
+2024-05-16 21:28:21,429 - app.model - INFO - Generated caption: ['a keyboard with colorful keys on it']
+2024-05-16 21:28:27,111 - app.model - INFO - Generated caption: ['a keyboard with colorful keys on it']
+2024-05-16 21:28:32,914 - app.model - INFO - Generated caption: ['a keyboard with colorful keys on it']
+2024-05-16 21:28:38,752 - app.model - INFO - Generated caption: ['a keyboard with colorful keys on it']
+2024-05-16 21:28:50,412 - app.model - INFO - Generated caption: ['a comic strip about a green man and a green box']
+2024-05-16 21:28:55,581 - app.model - INFO - Generated caption: ['a comic strip about a green man and a green box']
+2024-05-16 21:29:00,355 - app.model - INFO - Generated caption: ['a comic strip about a green man and a green box']
+2024-05-16 21:29:05,272 - app.model - INFO - Generated caption: ['a comic strip about a green man and a green box']
+2024-05-16 21:29:10,477 - app.model - INFO - Generated caption: ['a comic strip about a green man and a green box']
+2024-05-16 21:29:15,360 - app.model - INFO - Generated caption: ['a comic strip about a green man and a green box']
+2024-05-16 21:29:21,241 - app.model - INFO - Generated caption: ['a comic strip about a green man and a green box']
+2024-05-16 21:29:26,416 - app.model - INFO - Generated caption: ['a comic strip about a green man and a green box']
+2024-05-16 21:29:42,722 - app.model - INFO - Generated caption: ['a black cat is standing on a black background']
+2024-05-16 21:29:48,540 - app.model - INFO - Generated caption: ['a black cat is standing on a black background']
+2024-05-16 21:29:56,514 - app.model - INFO - Generated caption: ['a black cat is standing on a black background']
+2024-05-16 21:30:03,313 - app.model - INFO - Generated caption: ['a black cat is standing on a black background']
+2024-05-16 21:30:08,765 - app.model - INFO - Generated caption: ['a black cat is standing on a black background']
+2024-05-16 21:30:14,110 - app.model - INFO - Generated caption: ['a black cat is standing on a black background']
+2024-05-16 21:30:18,641 - app.model - INFO - Generated caption: ['a black cat is standing on a black background']
+2024-05-16 21:30:23,608 - app.model - INFO - Generated caption: ['a black cat is standing on a black background']
+2024-05-16 21:30:28,649 - app.model - INFO - Generated caption: ['a black cat is standing on a black background']
+2024-05-16 21:30:33,720 - app.model - INFO - Generated caption: ['a black cat is standing on a black background']
+2024-05-16 21:30:38,258 - app.model - INFO - Generated caption: ['a black cat is standing on a black background']
+2024-05-16 21:30:42,658 - app.model - INFO - Generated caption: ['a black cat is standing on a black background']
+2024-05-16 21:30:57,889 - app.model - INFO - Generated caption: ['a man in a leather jacket standing in front of a poster']
+2024-05-16 21:31:06,112 - app.model - INFO - Generated caption: ['a photo of two people and their children', 'a wedding party with a pig in the background', 'a man in sunglasses sitting at a piano', 'a man and woman standing in front of a house']
+2024-05-16 21:31:06,639 - app.model - INFO - Generated caption: ['a family of four people standing in front of a picture', 'a man and a girl standing in front of a castle', 'a woman sitting on a hot air balloon', 'a man in a blue uniform is posing for a photo']
+2024-05-16 21:31:07,128 - app.model - INFO - Generated caption: ['a woman in a coat', 'a family with a baby in a photo', 'a group of men standing around a plane', 'a woman in a cockpit of a plane']
+2024-05-16 21:31:07,839 - app.model - INFO - Generated caption: ['a group of men sitting on a train', 'a boy is posing with a mascot in a kitchen', 'a group of people posing in a room with blood on their faces', 'a group of people sitting on a car']
+2024-05-16 21:31:08,382 - app.model - INFO - Generated caption: ['a woman walking down the street with a suitcase', 'a man sitting in the cockpit of a fighter jet', 'a group of people posing for a picture', 'a woman in a lingerie standing in a bathroom']
+2024-05-16 21:31:08,904 - app.model - INFO - Generated caption: ['a man in a suit walking down the street', 'a woman walking through a field of wheat', 'a boy in a blue jacket holding a guitar', 'a man in a suit and sunglasses holding a duck']
+2024-05-16 21:31:09,235 - app.model - INFO - Generated caption: ['a store with a lot of food']
+2024-05-16 21:31:20,309 - app.model - INFO - Generated caption: ['a man in a leather jacket standing in front of a poster']
+2024-05-16 21:31:28,436 - app.model - INFO - Generated caption: ['a man in a leather jacket standing in front of a poster']
+2024-05-16 21:31:34,228 - app.model - INFO - Generated caption: ['a man in a leather jacket standing in front of a poster']
+2024-05-16 21:31:40,619 - app.model - INFO - Generated caption: ['a man in a leather jacket standing in front of a poster']
+2024-05-16 21:31:46,911 - app.model - INFO - Generated caption: ['a man in a leather jacket standing in front of a poster']
+2024-05-16 21:31:52,510 - app.model - INFO - Generated caption: ['a man in a leather jacket standing in front of a poster']
+2024-05-16 21:31:58,403 - app.model - INFO - Generated caption: ['a man in a leather jacket standing in front of a poster']
+2024-05-16 21:32:16,611 - app.model - INFO - Generated caption: ['a man in a leather jacket standing in front of a poster']
+2024-05-16 21:32:24,501 - app.model - INFO - Generated caption: ['a photo of two people and their children', 'a wedding party with a pig in the background', 'a man in sunglasses sitting at a piano', 'a man and woman standing in front of a house']
+2024-05-16 21:32:25,066 - app.model - INFO - Generated caption: ['a family of four people standing in front of a picture', 'a man and a girl standing in front of a castle', 'a woman sitting on a hot air balloon', 'a man in a blue uniform is posing for a photo']
+2024-05-16 21:32:25,541 - app.model - INFO - Generated caption: ['a woman in a coat', 'a family with a baby in a photo', 'a group of men standing around a plane', 'a woman in a cockpit of a plane']
+2024-05-16 21:32:26,134 - app.model - INFO - Generated caption: ['a group of men sitting on a train', 'a boy is posing with a mascot in a kitchen', 'a group of people posing in a room with blood on their faces', 'a group of people sitting on a car']
+2024-05-16 21:32:26,688 - app.model - INFO - Generated caption: ['a woman walking down the street with a suitcase', 'a man sitting in the cockpit of a fighter jet', 'a group of people posing for a picture', 'a woman in a lingerie standing in a bathroom']
+2024-05-16 21:32:27,198 - app.model - INFO - Generated caption: ['a man in a suit walking down the street', 'a woman walking through a field of wheat', 'a boy in a blue jacket holding a guitar', 'a man in a suit and sunglasses holding a duck']
+2024-05-16 21:32:27,515 - app.model - INFO - Generated caption: ['a store with a lot of food']
+2024-05-16 21:32:38,635 - app.model - INFO - Generated caption: ['a man in a leather jacket standing in front of a poster']
+2024-05-16 21:32:58,629 - app.model - INFO - Generated caption: ['a man in a leather jacket standing in front of a poster']
+2024-05-16 21:33:17,679 - app.model - INFO - Generated caption: ['a man in a leather jacket standing in front of a poster']
+2024-05-16 21:33:36,728 - app.model - INFO - Generated caption: ['a man in a leather jacket standing in front of a poster']
+2024-05-16 21:33:55,589 - app.model - INFO - Generated caption: ['a man in a leather jacket standing in front of a poster']
+2024-05-16 21:34:25,721 - app.model - INFO - Generated caption: ['a green xbox 360 in a plastic container']
+2024-05-16 21:34:31,907 - app.model - INFO - Generated caption: ['a green xbox 360 in a plastic container']
+2024-05-16 21:34:37,868 - app.model - INFO - Generated caption: ['a green xbox 360 in a plastic container']
+2024-05-16 21:34:43,395 - app.model - INFO - Generated caption: ['a green xbox 360 in a plastic container']
+2024-05-16 21:34:48,586 - app.model - INFO - Generated caption: ['a green xbox 360 in a plastic container']
+2024-05-16 21:34:53,359 - app.model - INFO - Generated caption: ['a green xbox 360 in a plastic container']
+2024-05-16 21:34:58,413 - app.model - INFO - Generated caption: ['a green xbox 360 in a plastic container']
+2024-05-16 21:35:03,770 - app.model - INFO - Generated caption: ['a green xbox 360 in a plastic container']
+2024-05-16 21:35:08,915 - app.model - INFO - Generated caption: ['a green xbox 360 in a plastic container']
+2024-05-16 21:35:13,544 - app.model - INFO - Generated caption: ['a green xbox 360 in a plastic container']
+2024-05-16 21:35:18,290 - app.model - INFO - Generated caption: ['a green xbox 360 in a plastic container']
+2024-05-16 21:35:28,846 - app.model - INFO - Generated caption: ['a pumpkin with a robot on it']
+2024-05-16 21:35:46,688 - app.model - INFO - Generated caption: ['a pumpkin with a robot on it']
+2024-05-16 21:35:52,669 - app.model - INFO - Generated caption: ['a pumpkin with a robot on it']
+2024-05-16 21:35:57,951 - app.model - INFO - Generated caption: ['a pumpkin with a robot on it']
+2024-05-16 21:36:15,437 - app.model - INFO - Generated caption: ['a pumpkin with a robot on it']
+2024-05-16 21:36:21,536 - app.model - INFO - Generated caption: ['a pumpkin with a robot on it']
+2024-05-16 21:36:27,478 - app.model - INFO - Generated caption: ['a pumpkin with a robot on it']
+2024-05-16 21:36:32,854 - app.model - INFO - Generated caption: ['a pumpkin with a robot on it']
+2024-05-16 21:36:38,524 - app.model - INFO - Generated caption: ['a pumpkin with a robot on it']
+2024-05-16 21:36:43,504 - app.model - INFO - Generated caption: ['a pumpkin with a robot on it']
+2024-05-16 21:36:47,765 - app.model - INFO - Generated caption: ['a pumpkin with a robot on it']
+2024-05-16 21:36:52,663 - app.model - INFO - Generated caption: ['a pumpkin with a robot on it']
+2024-05-16 21:36:56,905 - app.model - INFO - Generated caption: ['a pumpkin with a robot on it']
+2024-05-16 21:37:01,011 - app.model - INFO - Generated caption: ['a pumpkin with a robot on it']
+2024-05-16 21:37:11,523 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:37:20,930 - app.model - INFO - Generated caption: ['a pumpkin with a mouth made out of wire', 'a ghost sitting on a bench with pumpkins', 'a playing card with a king on it', 'a small insect on a wooden table']
+2024-05-16 21:37:21,360 - app.model - INFO - Generated caption: ['a man is sitting in an airplane', 'a train is going through a tunnel', 'a drawing of cats in different poses', 'a nude woman in a white dress']
+2024-05-16 21:37:21,957 - app.model - INFO - Generated caption: ['a blue ice skeleton with a cone hat', 'a woman is sitting on a couch', 'a black and white drawing of a woman in a lingerie', 'a painting of a red lake with a boat on it']
+2024-05-16 21:37:22,521 - app.model - INFO - Generated caption: ['a turtle is floating in the ocean', 'a woman in a red dress is sitting on a bed', 'a woman is sitting on a tiger with a snake', 'a purple bird with a hat and a purple hat']
+2024-05-16 21:37:23,138 - app.model - INFO - Generated caption: ['a painting of a man with glasses and a mouth open', 'a painting of a woman with a blue face', 'a book with a picture of a pencil and a pencil', 'a painting of a lion and a zebra in the water']
+2024-05-16 21:37:23,663 - app.model - INFO - Generated caption: ['a wooden hair comb with a flower on it', 'a poster with a blue sky and a bird on top', 'a mermaid is swimming in the water', 'a person is standing in a cloud with a blue sky']
+2024-05-16 21:37:24,032 - app.model - INFO - Generated caption: ['a painting of a house in the woods']
+2024-05-16 21:37:35,633 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:37:56,428 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:38:03,201 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:38:08,727 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:38:14,377 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:38:34,636 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:38:54,447 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:39:13,214 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:39:19,278 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:39:24,827 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:39:29,375 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:39:34,887 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:39:41,191 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:39:47,956 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:39:53,237 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:40:13,196 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:40:32,809 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:40:52,344 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:40:58,241 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:41:18,000 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:41:23,853 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:41:28,997 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:41:33,929 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:41:39,050 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:41:56,210 - app.model - INFO - Generated caption: ['a woman and child in a green house', 'a black background with a white airplane flying in the sky', 'a woman holding a child in her arms', 'a house and a water pump']
+2024-05-16 21:41:56,833 - app.model - INFO - Generated caption: ['a white envelope with a pink and white design', 'two paintings of houses and a bird', 'a white envelope with a pink and white design', 'a cartoon of a duck with money and a man holding a phone']
+2024-05-16 21:41:57,365 - app.model - INFO - Generated caption: ['a white envelope with a pink and white design', 'two paintings of a man with a book in his head', 'a white envelope with a pink and white design', 'a man in a mask and glasses is holding a virus']
+2024-05-16 21:41:57,952 - app.model - INFO - Generated caption: ['a white envelope with a pink and white design', 'a man in a hat and glasses is walking down a path', 'a white envelope with a pink and white design', 'a poster with people doing yoga and other exercises']
+2024-05-16 21:41:58,536 - app.model - INFO - Generated caption: ['a white envelope with a pink and white design', 'a picture of a dove and a map of the united states', 'a white envelope with a pink and white design', 'two pictures of a woman on a rope with different faces']
+2024-05-16 21:41:59,053 - app.model - INFO - Generated caption: ['a white envelope with a pink and white design', 'a blue tree and a hand with a blue hand', 'a white envelope with a pink and white design', 'a gray background with a white airplane flying in the sky']
+2024-05-16 21:41:59,561 - app.model - INFO - Generated caption: ['a gray background with a white airplane flying in the sky', 'a woman with a headset and a robot', 'a white envelope with a pink and white design', 'a collage of paintings with a heart and an american flag']
+2024-05-16 21:42:00,204 - app.model - INFO - Generated caption: ['a white envelope with a pink and white design', 'a group of people are shown in different colors', 'a white envelope with a pink and white design', 'a man is holding a magnifying glass and a dna strand']
+2024-05-16 21:42:00,670 - app.model - INFO - Generated caption: ['a white envelope with a pink and white design', 'illustrations of business and money', 'a white envelope with a pink and white design', 'a woman holding a hand and an hourglass']
+2024-05-16 21:42:01,154 - app.model - INFO - Generated caption: ['a white envelope with a pink and white design', 'two paintings of a man and a dragon', 'a white envelope with a pink and white design', 'a collage of different people in different colors']
+2024-05-16 21:42:01,831 - app.model - INFO - Generated caption: ['a white envelope with a pink and white design', 'two paintings of a man on a boat and a man on a boat', 'a white envelope with a pink and white design', 'a set of illustrations showing different types of technology']
+2024-05-16 21:42:02,356 - app.model - INFO - Generated caption: ['a white envelope with a pink and white design', 'a gray background with a white airplane flying in the sky', 'a gray background with a white airplane flying in the sky', 'original art studios in the service of art']
+2024-05-16 21:42:02,767 - app.model - INFO - Generated caption: ['a blue background with a white airplane flying over it', 'a red and white square on a white background']
+2024-05-16 21:42:08,945 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:42:22,199 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:42:34,887 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:42:47,521 - app.model - INFO - Generated caption: ['the person logo on a white background', 'a black and white image of a person', 'the person logo on a white background', 'a black and white image of a plane flying over a dark background']
+2024-05-16 21:42:48,514 - app.model - INFO - Generated caption: ['the saturn saturn saturn saturn saturn saturn saturn sa', 'a black and white image of a person', 'the person logo on a white background', 'a black and white image of a plane flying over a dark background']
+2024-05-16 21:42:49,500 - app.model - INFO - Generated caption: ['the saturn saturn saturn saturn saturn saturn saturn sa', 'the saturn saturn saturn saturn saturn saturn saturn sa', 'a black and white image of a square', 'a square with a white background']
+2024-05-16 21:42:50,153 - app.model - INFO - Generated caption: ['a grey and white square with a white background', 'the neolithic era in the neolithic era', 'a colorful abstract painting of a man with a arrow', 'the cover of the book, a man standing in a square']
+2024-05-16 21:42:50,657 - app.model - INFO - Generated caption: ['a group of people holding up money', 'a colorful lizard with a colorful tail', 'a man is painting a picture of a man', 'a yellow house in a city of buildings']
+2024-05-16 21:42:51,160 - app.model - INFO - Generated caption: ['a man standing on top of a bunch of balloons', 'a drawing of a man with a rainbow feather', 'a man is holding a rainbow pole', 'a cartoon of a man riding a skateboard']
+2024-05-16 21:42:51,687 - app.model - INFO - Generated caption: ['a painting of a woman with many faces', 'a drawing of people on a train', 'a poster with people and arrows on a pink background', 'a man is holding a rainbow colored object']
+2024-05-16 21:42:52,336 - app.model - INFO - Generated caption: ['a drawing of a man and woman with paints on their heads', "a cartoon of people in a circle with the words 'the kingdom of heaven'", 'a silhouette of a person holding an umbrella in the dark', 'a group of people standing in a circle']
+2024-05-16 21:42:52,931 - app.model - INFO - Generated caption: ['a cartoon of a man standing in a crowd of people', 'a cartoon of a man and woman painting a mailbox', 'two people are talking about a ball', 'a picture of a person with umbrellas on a cloudy day']
+2024-05-16 21:42:53,366 - app.model - INFO - Generated caption: ['a painting of sunflowers and an oil pump', 'a man is painting under an umbrella in the rain', 'the cover of the book, the art of business']
+2024-05-16 21:42:58,111 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:43:05,916 - app.model - INFO - Generated caption: ['a colorful abstract painting of a man in a pose']
+2024-05-16 21:43:07,980 - app.model - INFO - Generated caption: ['a man standing next to a colorful painting']
+2024-05-16 21:48:08,415 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:48:17,770 - app.model - INFO - Generated caption: ['a pumpkin with a mouth made out of wire', 'a ghost sitting on a bench with pumpkins', 'a playing card with a king on it', 'a small insect on a wooden table']
+2024-05-16 21:48:18,194 - app.model - INFO - Generated caption: ['a man is sitting in an airplane', 'a train is going through a tunnel', 'a drawing of cats in different poses', 'a nude woman in a white dress']
+2024-05-16 21:48:18,774 - app.model - INFO - Generated caption: ['a blue ice skeleton with a cone hat', 'a woman is sitting on a couch', 'a black and white drawing of a woman in a lingerie', 'a painting of a red lake with a boat on it']
+2024-05-16 21:48:19,334 - app.model - INFO - Generated caption: ['a turtle is floating in the ocean', 'a woman in a red dress is sitting on a bed', 'a woman is sitting on a tiger with a snake', 'a purple bird with a hat and a purple hat']
+2024-05-16 21:48:19,932 - app.model - INFO - Generated caption: ['a painting of a man with glasses and a mouth open', 'a painting of a woman with a blue face', 'a book with a picture of a pencil and a pencil', 'a painting of a lion and a zebra in the water']
+2024-05-16 21:48:20,445 - app.model - INFO - Generated caption: ['a wooden hair comb with a flower on it', 'a poster with a blue sky and a bird on top', 'a mermaid is swimming in the water', 'a person is standing in a cloud with a blue sky']
+2024-05-16 21:48:20,814 - app.model - INFO - Generated caption: ['a painting of a house in the woods']
+2024-05-16 21:48:31,588 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:48:49,482 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:49:06,759 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:49:12,800 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:49:18,378 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:49:24,005 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:49:29,426 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:49:34,982 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:49:40,648 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:49:46,087 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:49:51,412 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:49:56,945 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:50:02,252 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:50:07,752 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:50:25,318 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:50:43,800 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:50:49,585 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:51:08,011 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:51:13,875 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:51:25,360 - app.model - INFO - Generated caption: ['a wooden cutting board with a pumpkin on it', 'a person holding a red fruit with seeds in it', 'a pizza with a slice missing', 'a bowl of noodles with meat and greens']
+2024-05-16 21:51:25,874 - app.model - INFO - Generated caption: ['a sushi tray with a variety of different sushi', 'a plate of fried chicken and a bottle of wine', 'a person holding a plate of waffles', 'a plate of fried doughnuts on a table']
+2024-05-16 21:51:26,407 - app.model - INFO - Generated caption: ['a plate with an orange on it', 'a rack of bread sitting on top of a stove', 'a plate with bacon, eggs and toast', 'two fried gnocchi with tomato sauce on a plate']
+2024-05-16 21:51:27,024 - app.model - INFO - Generated caption: ['a plate of toast with avocado and sauce', 'a white cake with a bow on top', 'a plate of meat and cheese enchiladas with dipping sauce', 'a chocolate cake with a slice taken out']
+2024-05-16 21:51:27,618 - app.model - INFO - Generated caption: ['a tray of bread rolls on a counter', 'a bowl of chicken wings on a wooden table', 'a bowl of ramen with eggs and noodles on a table', 'a plate of french toast with bacon and eggs']
+2024-05-16 21:51:28,149 - app.model - INFO - Generated caption: ['a large roll with a slice of cheese on top', 'a pan of buns on a stove top', 'a plate with chicken wings and celery', 'a cake with a caramel topping on top']
+2024-05-16 21:51:28,670 - app.model - INFO - Generated caption: ['a stack of quesadillas on a wooden board']
+2024-05-16 21:51:40,782 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:51:59,463 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:52:17,799 - app.model - INFO - Generated caption: ['a purple and white bird is sitting on a branch']
+2024-05-16 21:52:43,176 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:52:54,068 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:53:04,143 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:53:14,711 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:53:20,578 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:53:25,841 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:53:31,116 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:53:36,037 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:53:40,832 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:53:45,732 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:53:50,421 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:53:55,122 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:53:59,889 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:54:04,849 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:54:10,338 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:54:15,860 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:54:21,582 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:54:26,697 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:54:31,912 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:54:36,484 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:54:41,387 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:54:47,836 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:54:53,178 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:54:58,430 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:55:03,766 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:55:08,807 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:55:13,590 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:55:19,488 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:55:25,336 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:55:31,069 - app.model - INFO - Generated caption: ['white flowers growing in the grass']
+2024-05-16 21:55:43,765 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:55:48,965 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:55:53,668 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:55:58,127 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:56:03,072 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:56:07,946 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:56:12,676 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:56:18,109 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:56:24,075 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:56:29,569 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:56:34,846 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:56:39,768 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:56:40,874 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:56:47,076 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:56:52,791 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:56:58,072 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:57:03,278 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:57:07,977 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:57:13,211 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:57:18,955 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:57:24,182 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:57:29,466 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:57:36,199 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:57:42,583 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:57:49,788 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:57:55,703 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:58:01,613 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:58:07,666 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:58:13,267 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:58:18,832 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:58:25,309 - app.model - INFO - Generated caption: ['a close up of a black calculator on a black surface']
+2024-05-16 21:58:37,667 - app.model - INFO - Generated caption: ['a baseball player sliding into base']
+2024-05-16 21:58:43,574 - app.model - INFO - Generated caption: ['a baseball player sliding into base']
+2024-05-16 21:58:49,193 - app.model - INFO - Generated caption: ['a baseball player sliding into base']
+2024-05-16 21:58:54,409 - app.model - INFO - Generated caption: ['a baseball player sliding into base']
+2024-05-16 21:58:59,989 - app.model - INFO - Generated caption: ['a baseball player sliding into base']
+2024-05-16 21:59:05,309 - app.model - INFO - Generated caption: ['a baseball player sliding into base']
+2024-05-16 21:59:10,350 - app.model - INFO - Generated caption: ['a baseball player sliding into base']
+2024-05-16 21:59:15,294 - app.model - INFO - Generated caption: ['a baseball player sliding into base']
+2024-05-16 21:59:26,544 - app.model - INFO - Generated caption: ['a cat sitting on a window sill looking out']
+2024-05-16 21:59:32,631 - app.model - INFO - Generated caption: ['a cat sitting on a window sill looking out']
+2024-05-16 21:59:38,497 - app.model - INFO - Generated caption: ['a cat sitting on a window sill looking out']
+2024-05-16 21:59:43,483 - app.model - INFO - Generated caption: ['a cat sitting on a window sill looking out']
+2024-05-16 21:59:49,940 - app.model - INFO - Generated caption: ['google doodle for the day of the polar bear']
+2024-05-16 21:59:51,635 - app.model - INFO - Generated caption: ['a cat sitting on a window sill looking out']
+2024-05-16 22:00:00,499 - app.model - INFO - Generated caption: ['two surfboards with orange and blue colors', 'two surfboards with orange and blue colors', 'google logo with a man in glasses', 'reddit - a white bear with a white hat']
+2024-05-16 22:00:01,076 - app.model - INFO - Generated caption: ['reddit - a white bear with a white hat', 'reddit - a white bear with a white hat', 'reddit - a white bear with a white hat', 'reddit - a white bear with a white hat']
+2024-05-16 22:00:01,574 - app.model - INFO - Generated caption: ['reddit - a white bear with a white hat']
+2024-05-16 22:00:08,199 - app.model - INFO - Generated caption: ['a cat sitting on a window sill looking out']
+2024-05-16 22:00:21,464 - app.model - INFO - Generated caption: ['a cat sitting on a window sill looking out']
+2024-05-16 22:00:26,426 - app.model - INFO - Generated caption: ['a cat sitting on a window sill looking out']
+2024-05-16 22:00:31,943 - app.model - INFO - Generated caption: ['a cat sitting on a window sill looking out']
+2024-05-16 22:00:37,146 - app.model - INFO - Generated caption: ['a cat sitting on a window sill looking out']
+2024-05-16 22:00:41,916 - app.model - INFO - Generated caption: ['a cat sitting on a window sill looking out']
+2024-05-16 22:00:46,999 - app.model - INFO - Generated caption: ['a cat sitting on a window sill looking out']
+2024-05-16 22:00:51,892 - app.model - INFO - Generated caption: ['a cat sitting on a window sill looking out']
+2024-05-16 22:00:56,760 - app.model - INFO - Generated caption: ['a cat sitting on a window sill looking out']
+2024-05-16 22:01:01,287 - app.model - INFO - Generated caption: ['a cat sitting on a window sill looking out']
+2024-05-16 22:01:05,847 - app.model - INFO - Generated caption: ['a cat sitting on a window sill looking out']
+2024-05-16 22:01:16,994 - app.model - INFO - Generated caption: ['a comic strip showing a man in a hospital bed']
+2024-05-16 22:01:22,925 - app.model - INFO - Generated caption: ['a comic strip showing a man in a hospital bed']
+2024-05-16 22:01:28,699 - app.model - INFO - Generated caption: ['a comic strip showing a man in a hospital bed']
+2024-05-16 22:01:34,753 - app.model - INFO - Generated caption: ['a comic strip showing a man in a hospital bed']
+2024-05-16 22:01:40,154 - app.model - INFO - Generated caption: ['a comic strip showing a man in a hospital bed']
+2024-05-16 22:01:46,699 - app.model - INFO - Generated caption: ["the cover of the album, 'earth city'", 'to catch a killer poster']
+2024-05-16 22:01:55,838 - app.model - INFO - Generated caption: ['a comic strip showing a man in a hospital bed']
+2024-05-16 22:02:10,774 - app.model - INFO - Generated caption: ['a comic strip showing a man in a hospital bed']
+2024-05-16 22:02:25,997 - app.model - INFO - Generated caption: ['a comic strip showing a man in a hospital bed']
+2024-05-16 22:02:47,009 - app.model - INFO - Generated caption: ['a colorful lobster with a purple shell']
+2024-05-16 22:02:53,182 - app.model - INFO - Generated caption: ['a colorful lobster with a purple shell']
+2024-05-16 22:02:59,169 - app.model - INFO - Generated caption: ['a colorful lobster with a purple shell']
+2024-05-16 22:03:04,795 - app.model - INFO - Generated caption: ['a colorful lobster with a purple shell']
+2024-05-16 22:03:09,670 - app.model - INFO - Generated caption: ['a colorful lobster with a purple shell']
+2024-05-16 22:03:15,147 - app.model - INFO - Generated caption: ['a colorful lobster with a purple shell']
+2024-05-16 22:03:20,514 - app.model - INFO - Generated caption: ['a colorful lobster with a purple shell']
+2024-05-16 22:03:25,875 - app.model - INFO - Generated caption: ['a colorful lobster with a purple shell']
+2024-05-16 22:03:31,088 - app.model - INFO - Generated caption: ['a colorful lobster with a purple shell']
+2024-05-16 22:03:36,576 - app.model - INFO - Generated caption: ['a colorful lobster with a purple shell']
+2024-05-16 22:03:42,419 - app.model - INFO - Generated caption: ['a colorful lobster with a purple shell']
+2024-05-16 22:03:47,865 - app.model - INFO - Generated caption: ['a colorful lobster with a purple shell']
+2024-05-16 22:03:53,891 - app.model - INFO - Generated caption: ['a colorful lobster with a purple shell']
+2024-05-16 22:03:59,160 - app.model - INFO - Generated caption: ['a colorful lobster with a purple shell']
+2024-05-16 22:04:04,611 - app.model - INFO - Generated caption: ['a colorful lobster with a purple shell']
+2024-05-16 22:04:10,189 - app.model - INFO - Generated caption: ['a colorful lobster with a purple shell']
+2024-05-16 22:04:15,166 - app.model - INFO - Generated caption: ['a colorful lobster with a purple shell']
+2024-05-16 22:04:20,152 - app.model - INFO - Generated caption: ['a colorful lobster with a purple shell']
+2024-05-16 22:04:32,044 - app.model - INFO - Generated caption: ['a watercolor painting of a street scene']
+2024-05-16 22:04:39,870 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:04:45,040 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:04:50,552 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:04:55,429 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:04:59,850 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:05:08,326 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:05:15,736 - app.model - INFO - Generated caption: ['a logo for grr', 'a blue and white logo with the word gi', 'the logo of the p', 'a blue logo with a white letter f']
+2024-05-16 22:05:16,144 - app.model - INFO - Generated caption: ['the logo for the g', 'a red cross with a black background', 'a blue circle with a white background', 'a blue circle with a white background']
+2024-05-16 22:05:16,502 - app.model - INFO - Generated caption: ['a blue circle with a white background', 'a blue circle with a white background']
+2024-05-16 22:05:21,784 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:05:28,367 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:05:34,162 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:05:39,871 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:05:45,778 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:05:52,356 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:05:59,126 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:06:06,531 - app.model - INFO - Generated caption: ['facebook logo in blue', 'whatsapp logo on a green background', 'the x logo on a black background', 'a man is standing in front of a black background']
+2024-05-16 22:06:07,366 - app.model - INFO - Generated caption: ['youtube logo with a white background', 'hank adams interesting facts', 'youtube logo with a white background', 'a cup of coffee with the words seattle now remembering hank adams, the most important indian']
+2024-05-16 22:06:07,847 - app.model - INFO - Generated caption: ['facebook logo in blue', 'whatsapp logo on a green background', 'the x logo on a black background', 'a man is standing in front of a black background']
+2024-05-16 22:06:13,480 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:06:20,221 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:06:27,128 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:06:33,405 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:06:39,417 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:06:45,308 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:06:52,029 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:06:58,757 - app.model - INFO - Generated caption: ['the last of us - screenshot']
+2024-05-16 22:07:21,004 - app.model - INFO - Generated caption: ['a white and black basketball jersey with the number 9 on it', "a document with the words'research paper'", 'a large mars shaped globe is seen in a museum', 'the city of boston is a city with a river']
+2024-05-16 22:07:21,482 - app.model - INFO - Generated caption: ['a christmas tree in front of a building', 'a crescent moon is seen in the sky', 'a man is standing in a flooded street', 'a sunset over a lake with trees and reflections']
+2024-05-16 22:07:21,952 - app.model - INFO - Generated caption: ['a truck driving down the road', 'a boat is in the water', 'a book with a picture of a city', 'a view of the mountains from an airplane']
+2024-05-16 22:07:22,490 - app.model - INFO - Generated caption: ['a map of england with the major cities and towns', 'a train station with a train in the middle of it', 'a white basketball jersey with a rainbow design', 'a park at night with lights and trees']
+2024-05-16 22:07:22,921 - app.model - INFO - Generated caption: ['a man is standing in a flooded area', 'a city skyline is seen from the water', 'a bear statue in the snow']
+2024-05-16 22:07:40,984 - app.model - INFO - Generated caption: ['a white and black basketball jersey with the number 9 on it', "a document with the words'research paper'", 'a large mars shaped globe is seen in a museum', 'the city of boston is a city with a river']
+2024-05-16 22:07:41,471 - app.model - INFO - Generated caption: ['a christmas tree in front of a building', 'a crescent moon is seen in the sky', 'a man is standing in a flooded street', 'a sunset over a lake with trees and reflections']
+2024-05-16 22:07:41,927 - app.model - INFO - Generated caption: ['a truck driving down the road', 'a boat is in the water', 'a book with a picture of a city', 'a view of the mountains from an airplane']
+2024-05-16 22:07:42,468 - app.model - INFO - Generated caption: ['a map of england with the major cities and towns', 'a train station with a train in the middle of it', 'a white basketball jersey with a rainbow design', 'a park at night with lights and trees']
+2024-05-16 22:07:42,884 - app.model - INFO - Generated caption: ['a man is standing in a flooded area', 'a city skyline is seen from the water', 'a bear statue in the snow']
+2024-05-16 22:09:12,823 - app.model - INFO - Generated caption: ['a group of ships in the ocean with a large number of ships']
+2024-05-16 22:10:13,242 - app.model - INFO - Generated caption: ['a pink tree with pink flowers in the background', 'a train with people on it and a window', 'a view of the city from an airplane window', 'a bench sits on the shore of a river']
+2024-05-16 22:10:13,714 - app.model - INFO - Generated caption: ['people are walking around in a large train station', 'a city is lit up at night with a rainbow', 'a bus with a pink and white design', 'a diagram showing different types of street lights']
+2024-05-16 22:10:14,214 - app.model - INFO - Generated caption: ['a christmas tree is in the middle of a large building', 'a group of people standing in front of the capitol building', 'a newspaper with a black background', 'a house with a lot of halloween decorations']
+2024-05-16 22:10:14,673 - app.model - INFO - Generated caption: ['a group of people standing in a circle', 'a newspaper article about a high school student', 'a cherry blossom tree is seen in the background', 'a painting of a building with red awnings']
+2024-05-16 22:10:15,118 - app.model - INFO - Generated caption: ['a group of people riding bikes on a street in the city']
+2024-05-16 22:10:45,913 - app.model - INFO - Generated caption: ['a pink bus with flowers on it']
+2024-05-16 22:11:23,297 - app.model - INFO - Generated caption: ['a man is crossing the street', 'a person holding a green tin can', 'a crowded street with people walking in the middle', 'a cat sitting on top of a box']
+2024-05-16 22:11:23,962 - app.model - INFO - Generated caption: ['a poster with a picture of a man on it', 'a subway station with a poster', 'a man in a tuxedo is standing in front of a box', 'a photo of a building with people outside']
+2024-05-16 22:11:24,531 - app.model - INFO - Generated caption: ['a red brick building with a red balloon on the front', 'a letter with a black pen on it', 'a man standing at a podium with a statue in front of him', 'a sign with a arrow pointing to east jr']
+2024-05-16 22:11:25,038 - app.model - INFO - Generated caption: ['a person walks down a street with parked cars', 'a view of the city from the air', 'a pool with green water in the middle of a forest', 'a cat is sitting on the floor of a bathroom']
+2024-05-16 22:11:25,568 - app.model - INFO - Generated caption: ["an artist's rendering of a city street at night", 'a painting of a building with people outside', 'a dirt road with a lot of buildings', 'a painting of a group of people sitting at a table']
+2024-05-16 22:11:25,940 - app.model - INFO - Generated caption: ['a painting of a man walking down the street']
+2024-05-16 22:11:40,639 - app.model - INFO - Generated caption: ['a cat sitting on a toilet']
+2024-05-16 22:11:59,550 - app.model - INFO - Generated caption: ['a man is crossing the street', 'a person holding a green tin can', 'a crowded street with people walking in the middle', 'a cat sitting on top of a box']
+2024-05-16 22:12:00,265 - app.model - INFO - Generated caption: ['a poster with a picture of a man on it', 'a subway station with a poster', 'a man in a tuxedo is standing in front of a box', 'a photo of a building with people outside']
+2024-05-16 22:12:00,855 - app.model - INFO - Generated caption: ['a red brick building with a red balloon on the front', 'a letter with a black pen on it', 'a man standing at a podium with a statue in front of him', 'a sign with a arrow pointing to east jr']
+2024-05-16 22:12:01,420 - app.model - INFO - Generated caption: ['a person walks down a street with parked cars', 'a view of the city from the air', 'a pool with green water in the middle of a forest', 'a cat is sitting on the floor of a bathroom']
+2024-05-16 22:12:01,996 - app.model - INFO - Generated caption: ["an artist's rendering of a city street at night", 'a painting of a building with people outside', 'a dirt road with a lot of buildings', 'a painting of a group of people sitting at a table']
+2024-05-16 22:12:02,377 - app.model - INFO - Generated caption: ['a painting of a man walking down the street']
+2024-05-16 22:12:17,074 - app.model - INFO - Generated caption: ['a subway station with posters on the wall']
+2024-05-16 22:13:16,536 - app.model - INFO - Generated caption: ['a pumpkin with a mouth made out of wire', 'a ghost sitting on a bench with pumpkins', 'a playing card with a king on it', 'a small insect on a wooden table']
+2024-05-16 22:13:16,983 - app.model - INFO - Generated caption: ['a man is sitting in an airplane', 'a train is going through a tunnel', 'a drawing of cats in different poses', 'a nude woman in a white dress']
+2024-05-16 22:13:17,616 - app.model - INFO - Generated caption: ['a blue ice skeleton with a cone hat', 'a woman is sitting on a couch', 'a black and white drawing of a woman in a lingerie', 'a painting of a red lake with a boat on it']
+2024-05-16 22:13:18,180 - app.model - INFO - Generated caption: ['a turtle is floating in the ocean', 'a woman in a red dress is sitting on a bed', 'a woman is sitting on a tiger with a snake', 'a purple bird with a hat and a purple hat']
+2024-05-16 22:13:18,785 - app.model - INFO - Generated caption: ['a painting of a man with glasses and a mouth open', 'a painting of a woman with a blue face', 'a book with a picture of a pencil and a pencil', 'a painting of a lion and a zebra in the water']
+2024-05-16 22:13:19,346 - app.model - INFO - Generated caption: ['a wooden hair comb with a flower on it', 'a poster with a blue sky and a bird on top', 'a mermaid is swimming in the water', 'a person is standing in a cloud with a blue sky']
+2024-05-16 22:13:19,744 - app.model - INFO - Generated caption: ['a painting of a house in the woods']
+2024-05-16 22:13:35,594 - app.model - INFO - Generated caption: ['a pumpkin with a mouth and teeth on it']
+2024-05-16 22:13:58,697 - app.model - INFO - Generated caption: ['new york city skyline at night']
+2024-05-16 22:14:04,812 - app.model - INFO - Generated caption: ['new york city skyline at night']
+2024-05-16 22:14:10,396 - app.model - INFO - Generated caption: ['new york city skyline at night']
+2024-05-16 22:14:16,099 - app.model - INFO - Generated caption: ['new york city skyline at night']
+2024-05-16 22:14:21,598 - app.model - INFO - Generated caption: ['new york city skyline at night']
+2024-05-16 22:14:26,305 - app.model - INFO - Generated caption: ['new york city skyline at night']
+2024-05-16 22:14:31,769 - app.model - INFO - Generated caption: ['new york city skyline at night']
+2024-05-16 22:14:36,565 - app.model - INFO - Generated caption: ['new york city skyline at night']
+2024-05-16 22:14:44,495 - app.model - INFO - Generated caption: ['new york city skyline at night']
+2024-05-16 22:14:51,427 - app.model - INFO - Generated caption: ['new york city skyline at night']
+2024-05-16 22:14:57,412 - app.model - INFO - Generated caption: ['new york city skyline at night']
+2024-05-16 22:15:03,521 - app.model - INFO - Generated caption: ['new york city skyline at night']
+2024-05-16 22:15:11,558 - app.model - INFO - Generated caption: ['the golden gate bridge is red']
+2024-05-16 22:15:17,096 - app.model - INFO - Generated caption: ['the golden gate bridge is red']
+2024-05-16 22:15:25,699 - app.model - INFO - Generated caption: ['a photo of two people and their children', 'a wedding party with a pig in the background', 'a man in sunglasses sitting at a piano', 'a man and woman standing in front of a house']
+2024-05-16 22:15:26,291 - app.model - INFO - Generated caption: ['a family of four people standing in front of a picture', 'a man and a girl standing in front of a castle', 'a woman sitting on a hot air balloon', 'a man in a blue uniform is posing for a photo']
+2024-05-16 22:15:26,758 - app.model - INFO - Generated caption: ['a woman in a coat', 'a family with a baby in a photo', 'a group of men standing around a plane', 'a woman in a cockpit of a plane']
+2024-05-16 22:15:27,349 - app.model - INFO - Generated caption: ['a group of men sitting on a train', 'a boy is posing with a mascot in a kitchen', 'a group of people posing in a room with blood on their faces', 'a group of people sitting on a car']
+2024-05-16 22:15:27,881 - app.model - INFO - Generated caption: ['a woman walking down the street with a suitcase', 'a man sitting in the cockpit of a fighter jet', 'a group of people posing for a picture', 'a woman in a lingerie standing in a bathroom']
+2024-05-16 22:15:28,405 - app.model - INFO - Generated caption: ['a man in a suit walking down the street', 'a woman walking through a field of wheat', 'a boy in a blue jacket holding a guitar', 'a man in a suit and sunglasses holding a duck']
+2024-05-16 22:15:28,723 - app.model - INFO - Generated caption: ['a store with a lot of food']
+2024-05-16 22:15:39,244 - app.model - INFO - Generated caption: ['the golden gate bridge is red']
+2024-05-16 22:15:57,054 - app.model - INFO - Generated caption: ['the golden gate bridge is red']
+2024-05-16 22:16:12,118 - app.model - INFO - Generated caption: ['two photos of two elderly men']
+2024-05-16 22:16:56,454 - app.model - INFO - Generated caption: ['the golden gate bridge is red']
+2024-05-16 22:17:53,610 - app.model - INFO - Generated caption: ['the golden gate bridge is red']
+2024-05-16 22:18:50,260 - app.model - INFO - Generated caption: ['the golden gate bridge is red']
+2024-05-16 22:19:47,207 - app.model - INFO - Generated caption: ['the golden gate bridge is red']
+2024-05-16 22:19:53,876 - app.model - INFO - Generated caption: ['the golden gate bridge is red']
+2024-05-16 22:19:59,531 - app.model - INFO - Generated caption: ['the golden gate bridge is red']
+2024-05-16 22:20:04,990 - app.model - INFO - Generated caption: ['the golden gate bridge is red']
+2024-05-16 22:20:18,324 - app.model - INFO - Generated caption: ['a city skyline with many tall buildings']
+2024-05-16 22:20:23,964 - app.model - INFO - Generated caption: ['a city skyline with many tall buildings']
+2024-05-16 22:20:28,472 - app.model - INFO - Generated caption: ['a city skyline with many tall buildings']
+2024-05-16 22:20:33,207 - app.model - INFO - Generated caption: ['a city skyline with many tall buildings']
+2024-05-16 22:20:38,288 - app.model - INFO - Generated caption: ['a city skyline with many tall buildings']
+2024-05-16 22:20:46,150 - app.model - INFO - Generated caption: ['a city skyline with many tall buildings']
+2024-05-16 22:20:52,926 - app.model - INFO - Generated caption: ['a city skyline with many tall buildings']
+2024-05-16 22:21:13,956 - app.model - INFO - Generated caption: ['a group of men walking down the street', 'a city street with buildings and a bus', 'a city street with cars and people', 'a screenshot of a city with a river and a city']
+2024-05-16 22:21:14,428 - app.model - INFO - Generated caption: ['a large red brick building with a tower on it', 'a construction cone sits on the sidewalk', 'a view of the city from an aerial view', 'a city skyline with clouds']
+2024-05-16 22:21:14,911 - app.model - INFO - Generated caption: ['an airplane wing flying over a city', 'a white car is driving down the street', 'a colorful sunset over a city with a river', 'a red and white balloon arch in a large building']
+2024-05-16 22:21:15,461 - app.model - INFO - Generated caption: ['a large building with a large parking lot', 'a black and white photo of a building', 'a street with a building and a boat in the background', 'a person is crouching down']
+2024-05-16 22:21:15,907 - app.model - INFO - Generated caption: ['a street scene with cars parked in front of a theater']
+2024-05-16 22:22:55,860 - app.model - INFO - Generated caption: ['a group of men in suits walking down the street']
+2024-05-16 22:23:39,396 - app.model - INFO - Generated caption: ['a comic strip about the human body', 'a comic strip showing how to make a sandwich', 'a black keyboard', 'a woman is talking about a computer and a computer']
+2024-05-16 22:23:39,870 - app.model - INFO - Generated caption: ['a comic about a brain and a brain', 'a concrete block with a cross on it', 'a screenshot of a text message', 'a comic strip about the different types of electronics']
+2024-05-16 22:23:40,545 - app.model - INFO - Generated caption: ['a keyboard and mouse on a wooden floor', 'a keyboard with colorful keys on it', 'nintendo switch logo with red and white letters', 'a blue audi a3 s4 parked in a parking lot']
+2024-05-16 22:23:40,994 - app.model - INFO - Generated caption: ['a cat mouse mat', 'a green keyboard with a mouse on it', 'a dog is laying on the floor', 'a room with a desk and a chair']
+2024-05-16 22:23:41,593 - app.model - INFO - Generated caption: ['a board with a set of buttons and a keyboard', 'a room with a ceiling and a floor', 'a display of different colored stones in a glass container', 'a bag of items on a table']
+2024-05-16 22:23:42,061 - app.model - INFO - Generated caption: ['a man is standing next to a car', 'a blue keyboard with a blue light', 'a brown and brown keyboard on a wooden table', 'a computer keyboard on a table']
+2024-05-16 22:23:42,532 - app.model - INFO - Generated caption: ['a man wearing a black jacket with a white keyboard on it']
+2024-05-16 22:24:02,218 - app.model - INFO - Generated caption: ['a comic strip about the human body', 'a comic strip showing how to make a sandwich', 'a black keyboard', 'a woman is talking about a computer and a computer']
+2024-05-16 22:24:02,891 - app.model - INFO - Generated caption: ['a comic about a brain and a brain', 'a concrete block with a cross on it', 'a screenshot of a text message', 'a comic strip about the different types of electronics']
+2024-05-16 22:24:03,712 - app.model - INFO - Generated caption: ['a keyboard and mouse on a wooden floor', 'a keyboard with colorful keys on it', 'nintendo switch logo with red and white letters', 'a blue audi a3 s4 parked in a parking lot']
+2024-05-16 22:24:04,183 - app.model - INFO - Generated caption: ['a cat mouse mat', 'a green keyboard with a mouse on it', 'a dog is laying on the floor', 'a room with a desk and a chair']
+2024-05-16 22:24:04,681 - app.model - INFO - Generated caption: ['a board with a set of buttons and a keyboard', 'a room with a ceiling and a floor', 'a display of different colored stones in a glass container', 'a bag of items on a table']
+2024-05-16 22:24:05,143 - app.model - INFO - Generated caption: ['a man is standing next to a car', 'a blue keyboard with a blue light', 'a brown and brown keyboard on a wooden table', 'a computer keyboard on a table']
+2024-05-16 22:24:05,763 - app.model - INFO - Generated caption: ['a man wearing a black jacket with a white keyboard on it']
+2024-05-16 22:24:21,100 - app.model - INFO - Generated caption: ['a dog laying next to a colorful keyboard']
+2024-05-16 22:24:47,594 - app.model - INFO - Generated caption: ['one stop market logo', 'a set of two gingerbread houses with a plastic bag', 'energy drink in a box with a box of cans', 'a bag of orange vanilla tea']
+2024-05-16 22:24:48,051 - app.model - INFO - Generated caption: ['a red and yellow cake with roses and candy', 'so divine coconut whip, coconut free, 450g', 'two bags of korean fried rice', 'a bottle of ginger ale on a white background']
+2024-05-16 22:24:48,581 - app.model - INFO - Generated caption: ['kraft stove top turkey & cranberry', 'a beige powder on a white background', "tony chachere's more spice seasoning", 'a plate of lobster and vegetable pies']
+2024-05-16 22:24:48,982 - app.model - INFO - Generated caption: ['crunchy rollers - a bag of crunchy rollers']
+2024-05-16 22:28:52,758 - app.model - INFO - Generated caption: ['number of endangered species in each state']
+2024-05-16 22:29:35,921 - app.model - INFO - Generated caption: ['a black and white arrow with a v in the middle', 'a black background with a plane flying in the sky', 'the logo of the person']
+2024-05-16 22:30:16,547 - app.model - INFO - Generated caption: ['wikipedia - wikipedia - wikipedia - wikipedia - wikipedia - wikipedia - wikipedia - wikipedia -', 'a close up of a brown and yellow tree', 'a man in a suit and tie standing in front of a flag', 'a woman standing on a mountain top with a hat']
+2024-05-16 22:30:17,122 - app.model - INFO - Generated caption: ['a castle sits on top of a mountain with snow on it', 'a blue and red logo with a red flower', 'a colorful gear wheel on a black background', 'a green and blue logo with a circle in the middle']
+2024-05-16 22:30:17,674 - app.model - INFO - Generated caption: ['a blue and white icon with a white background', 'a red, green, and blue bar with a black background', 'a blue globe with a blue circle', 'a blue wave with a blue circle on it']
+2024-05-16 22:30:18,225 - app.model - INFO - Generated caption: ['a blue and white logo with a polar bear in it', 'a blue and green logo with a ball in it', 'the university of nebraska logo', 'the logo of a company with a triangle in the middle']
+2024-05-16 22:30:18,628 - app.model - INFO - Generated caption: ['chinese characters in blue and red', 'a wikimedia project logo', 'mediawiki - powered by mediawiki']
+2024-05-16 22:30:27,509 - app.model - INFO - Generated caption: ['a man in glasses and a tie smiling']
+2024-05-16 22:33:45,737 - app.model - INFO - Generated caption: ['brazil produces about as much sugar cane as all of asia']
+2024-05-16 22:36:45,922 - app.model - INFO - Generated caption: ['a picture of plants and flowers', 'a glass of wine on a tiled floor', 'a small piece of chocolate with a leaf on it', 'a leaf with a yellow flower']
+2024-05-16 22:36:46,467 - app.model - INFO - Generated caption: ['a collage of pictures of cars in a parking lot', 'a group of bottles of different types of alcohol', 'a woman is standing in a field with a basket', 'a small piece of acorn with a penny on top']
+2024-05-16 22:36:47,102 - app.model - INFO - Generated caption: ['a wooden hat with a hat on it', 'a collage of various foods and plants', 'the chart shows the number of people who are able to afford to buy a home', 'a globe with the country of south america']
+2024-05-16 22:36:47,633 - app.model - INFO - Generated caption: ['a chemical molecule with the name of a chemical compound', 'a city with many tall buildings and a river', 'a satellite image of an island in the ocean', 'a dirt road in a field with a lot of trees']
+2024-05-16 22:37:05,151 - app.model - INFO - Generated caption: ['a lake surrounded by trees and mountains', 'a machine is making chocolates in a factory', 'a tree with flowers and leaves in the forest', 'a factory with smoke coming out of it']
+2024-05-16 22:37:05,657 - app.model - INFO - Generated caption: ['a map of hawaii with the major cities and islands', 'a farmer is driving a tractor in a corn field']
+2024-05-16 22:37:51,734 - app.model - INFO - Generated caption: ['a picture of various plants and flowers', 'a graph showing the percentage of the population that is a smoker', 'a pile of sticks with different colors', 'a bunch of green leaves on the ground']
+2024-05-16 22:37:52,242 - app.model - INFO - Generated caption: ['a map showing the route of the korean war', 'a map of the world with the islamic empire', 'a print of a windmill with people and palm trees', 'a group of people standing in a field of corn']
+2024-05-16 22:37:52,772 - app.model - INFO - Generated caption: ['an old photograph of people in a village', 'an old drawing of people in a boat', 'a green landscape with palm trees and a blue sky', 'a sunset over a field with a tree in the background']
+2024-05-16 22:37:53,277 - app.model - INFO - Generated caption: ['a postcard showing men working in the dirt', 'a field of sugar cane with a lot of grass', 'a highway with a bridge in the background', 'a man is cutting a tree with a saw']
+2024-05-16 22:37:53,805 - app.model - INFO - Generated caption: ['a large truck driving down the road', 'a large building with smoke coming out of it', 'a book with a question mark on it', 'a pile of yellow sugar cubes on a wooden surface']
+2024-05-16 22:37:54,386 - app.model - INFO - Generated caption: ['a pile of sugar on a green surface', "a map showing the locations of the world's largest pharma companies", 'the brazilian flag with a blue and yellow background', "india's flag with the white, green, and orange colors"]
+2024-05-16 22:37:54,957 - app.model - INFO - Generated caption: ['the flag of china with stars and a red background', 'pakistan flag with a crescent and a star', 'thailand flag with a white, red, and blue background', 'the flag of mexico']
+2024-05-16 22:37:55,431 - app.model - INFO - Generated caption: ['the flag of the united states', 'the australian flag with a white star in the middle', 'a factory with smoke coming out of the chimney', 'a group of people carrying a large pile of wood']
+2024-05-16 22:37:55,895 - app.model - INFO - Generated caption: ['a gas station with a green sign', 'a pile of wood chips on the ground', 'a table with several cups of green juice', 'a field of tall grass with a blue sky']
+2024-05-16 22:37:56,375 - app.model - INFO - Generated caption: ['a field of tall grass with mountains in the background', 'a brick fireplace with a brick chimney', 'a glass of mojito with lime and straws', 'a red and yellow circle with a green eye']
+2024-05-16 22:37:56,824 - app.model - INFO - Generated caption: ['a blue and red logo with a red flame', 'a gold coin with a cross on it', 'a gold coin with a cross on it', 'a blue fish with a black background']
+2024-05-16 22:39:54,185 - app.model - INFO - Generated caption: ['a blue globe with a red and blue background', 'a padlock icon with a person inside', 'brazil flag - wikipedia', 'the coat of arms of brazil']
+2024-05-16 22:39:54,646 - app.model - INFO - Generated caption: ['the logo for the federal government of brazil', 'the map of brazil with the green country highlighted', 'a blue globe with a red and blue background', 'a blue globe with a red and blue background']
+2024-05-16 22:39:55,080 - app.model - INFO - Generated caption: ['a gray triangle with a black background', 'a gray triangle with a black background', 'a green christmas tree with a black background', 'a green christmas tree with a black background']
+2024-05-16 22:39:55,508 - app.model - INFO - Generated caption: ['a green christmas tree with a black background', 'a green christmas tree with a black background', 'a green triangle with a black background', 'a green christmas tree with a black background']
+2024-05-16 22:39:56,040 - app.model - INFO - Generated caption: ['a cave with paintings on the walls', 'painting the british fleet at the pacific by person', 'a painting shows men in uniform standing in a room', 'a painting of a man being hung on a pole']
+2024-05-16 22:39:56,670 - app.model - INFO - Generated caption: ['a painting shows people in a room', 'a painting of men on horses on a dirt road', 'a painting of a man in a crown standing in front of a crowd', 'a painting shows people on horses in front of buildings']
+2024-05-16 22:39:57,212 - app.model - INFO - Generated caption: ['a group of men in uniform standing next to a group of women', 'a group of people standing on a truck', 'a group of people walking in front of a tall building', 'a group of tanks on a street']
+2024-05-16 22:39:57,704 - app.model - INFO - Generated caption: ['a group of men standing in front of a microphone', 'the sun is shining over the mountains', 'the amazon rainforest is a huge area of forest', 'a map of brazil with different climate types']
+2024-05-16 22:39:58,223 - app.model - INFO - Generated caption: ["brazil map with the country's location", 'a toucan sitting on a branch with fruit', 'amazon destation and degradation', 'the brazilian parliament building is reflected in a lake']
+2024-05-16 22:39:58,758 - app.model - INFO - Generated caption: ['the building is lit up at night', 'a statue of a woman sitting in front of a building', 'a fighter jet is parked on the runway', 'two ships in the ocean with one in the middle']
+2024-05-16 22:39:59,336 - app.model - INFO - Generated caption: ['a building with a large fountain in front of it at night', 'a large building with a lot of trees in front of it', 'a map of brazil with different colored regions', 'a city with many tall buildings and a highway']
+2024-05-16 22:39:59,866 - app.model - INFO - Generated caption: ['a group of people sitting at desks in a stock exchange', 'a combine harvester is working in a field', 'a green military plane on the runway', 'igua falls in brazil']
+2024-05-16 22:40:00,298 - app.model - INFO - Generated caption: ['a city with a mountain in the background', 'a large rocket with people standing around it', 'a large circular building with a circular roof', 'a dam with water flowing over it']
+2024-05-16 22:40:00,851 - app.model - INFO - Generated caption: ['wind turbines in the desert under a cloudy sky', 'a large airport with a large building and a large parking lot', 'a highway with cars driving down it', 'a map of brazil showing the area of land']
+2024-05-16 22:40:01,347 - app.model - INFO - Generated caption: ['a city with many buildings and trees', 'a large white building with columns in front of it', 'a museum with many displays and a lot of people', 'an aerial view of a river and island']
+2024-05-16 22:40:01,977 - app.model - INFO - Generated caption: ['a building with a clock tower', 'a view of the city from an elevated position', 'a view of rio from the top of christ the redeemer mountain', 'a city with many buildings and trees']
+2024-05-16 22:40:02,531 - app.model - INFO - Generated caption: ['a city with a bridge and water in the background', 'a large float with a large bird on it', 'the cathedral of christianity in brazil', 'two men in tuxedos standing next to each other']
+2024-05-16 22:40:03,102 - app.model - INFO - Generated caption: ['a man with a beard and glasses is wearing a suit', 'a man sitting on a chair in front of a red curtain', 'a plate of black beans and rice with a person holding it', 'a red carpet leading to a building at night']
+2024-05-16 22:40:03,644 - app.model - INFO - Generated caption: ['a man and woman sitting at a table', 'a painting of people in a room', 'a soccer player standing on a field', 'a man in a red racing suit standing on a track']
+2024-05-16 22:40:04,154 - app.model - INFO - Generated caption: ['the brazilian flag with a blue and yellow circle', 'a green globe with the continent of latin america', 'a purple globe with a black outline', 'a blue and red logo with chinese characters']
+2024-05-16 22:40:04,712 - app.model - INFO - Generated caption: ['the logo of a blue and red fire', 'a blue globe with a blue background', 'a blue wave with a blue arrow', 'a blue and white logo with a polar bear in it']
+2024-05-16 22:40:05,235 - app.model - INFO - Generated caption: ['a blue and white folder with a blue background', 'the u s judicial system logo', 'a logo with a triangle in the middle', 'a red, green, and blue square on a black background']
+2024-05-16 22:40:05,695 - app.model - INFO - Generated caption: ['a green globe icon on a black background', 'a magnifying glass on a black background', 'a green globe icon on a black background', 'a blue globe with a red and blue background']
+2024-05-16 22:40:06,156 - app.model - INFO - Generated caption: ['a globe with the country of south america', 'cplp logo with a blue flower', 'a russian flag with a white background', 'the flag of south africa']
+2024-05-16 22:40:06,764 - app.model - INFO - Generated caption: ['the egyptian flag with the egyptian flag', 'ethiopian flag - ethiopian flag', 'iran flag with a white background', 'the flag of uae']
+2024-05-16 22:40:07,366 - app.model - INFO - Generated caption: ['a russian flag with a white background', 'the flag of south africa', 'the egyptian flag with the egyptian flag', 'ethiopian flag - ethiopian flag']
+2024-05-16 22:40:08,306 - app.model - INFO - Generated caption: ['iran flag with a white background', 'the flag of uae', 'a purple circle with a white circle inside', 'the emblem of the islamic islamic islamic islamic islamic islamic islamic islamic islamic ']
+2024-05-16 22:40:08,668 - app.model - INFO - Generated caption: ['a blue globe with a red and blue background']
+2024-05-16 22:41:13,358 - app.model - INFO - Generated caption: ['plastic oceans infographic']
+2024-05-16 22:44:41,664 - app.model - INFO - Generated caption: ['a turtle is being pulled by a rope in the ocean', 'a beach with plastic bottles and trash on it', 'plastic waste in a garden', 'a pile of plastic garbage in a field']
+2024-05-16 22:44:42,192 - app.model - INFO - Generated caption: ['a smokestack with smoke coming out of it', 'a leaf with three leaves on it', 'a blue background with a white earth in the middle', "the pathway by which plastic enters the world's oceans"]
+2024-05-16 22:44:42,725 - app.model - INFO - Generated caption: ['a graph showing the growth of the u s economy', 'two plastic bags floating in the ocean', 'a graph showing the growth of the stock market', 'a bar chart showing the number of people in a group']
+2024-05-16 22:44:43,232 - app.model - INFO - Generated caption: ['a sign on a hillside with a sign', "a map showing the world's water resources", "a map showing the world's population", 'people are cleaning up garbage on the street']
+2024-05-16 22:44:43,866 - app.model - INFO - Generated caption: ['a dead bird with a plastic bag on the ground', 'a bottle, cd, and other items are laid out on a table', "a map showing the world's population", "a map showing the world's population"]
+2024-05-16 22:44:44,395 - app.model - INFO - Generated caption: ["a map showing the world's population", 'a sign on a hillside with a sign', 'google chrome logo', 'a blue and red logo with a red and blue flower']
+2024-05-16 22:46:25,061 - app.model - INFO - Generated caption: ['a building with a clock tower and a clock', 'a diagram showing the process of a gasification plant', 'a diagram of a gas plant with different components', 'a pile of garbage with boxes and other items']
+2024-05-16 22:46:25,545 - app.model - INFO - Generated caption: ['a gold coin with a cross on it', 'a black background with a plane flying in the sky', 'a pink and white logo on a gray background', 'a gold coin with a cross on it']
+2024-05-16 22:46:25,973 - app.model - INFO - Generated caption: ['a gold coin with a cross on it', 'a pink and white logo on a gray background', 'a pink and white logo on a gray background']
+2024-05-16 22:46:40,181 - app.model - INFO - Generated caption: ['a large container ship docked in a dock', 'a ship is in the water', 'a whale carcass is seen in the mud', 'a mountain in the background']
+2024-05-16 22:46:40,492 - app.model - INFO - Generated caption: ['a group of people in different colors', 'a group of people in different colors']
+2024-05-16 22:46:52,796 - app.model - INFO - Generated caption: ['a factory with smoke coming out of the chimney', 'efe environmental health objective - quality', 'a map of the world with many different lines', 'a mountain with clouds in the sky']
+2024-05-16 22:46:53,352 - app.model - INFO - Generated caption: ['a jet is flying through the sky with smoke coming out of it', 'a fire is seen in the sky over a field', 'a woman is cooking food in a large pot', 'a photo of a dust storm in the desert']
+2024-05-16 22:46:53,857 - app.model - INFO - Generated caption: ['a city with a lot of smoke in the sky', 'a group of people standing around a pile of debris', 'a diagram showing the different types of gases', 'a factory with smoke coming out of it']
+2024-05-16 22:46:54,385 - app.model - INFO - Generated caption: ['a large industrial building with a large chimney', 'a graph showing the number of people in the eu', "a map showing the world's water resources", 'air quality data follower']
+2024-05-16 22:46:55,009 - app.model - INFO - Generated caption: ['how many lives are lost from pollution each year?', "a map showing the world's population", 'two graphs showing the number of a gene and the number of a protein', 'a city street with power lines and smoke']
+2024-05-16 22:46:55,509 - app.model - INFO - Generated caption: ["a map showing the world's population", 'a planet with a moon and a spacecraft', "a chart showing the percentage of the world's population", 'a train is on the tracks']
+2024-05-16 22:46:56,070 - app.model - INFO - Generated caption: ['a black fence is on the sidewalk', 'a city with a lot of buildings and a lot of smoke', 'a video clapper with a blue and white logo', 'a map of the world with red and green areas']
+2024-05-16 22:46:56,591 - app.model - INFO - Generated caption: ["a map showing the world's population", 'a blue, green, and red logo with a black background', 'the earth is seen from space']
+2024-05-16 22:48:54,757 - app.model - INFO - Generated caption: ['ocean conservancy logo on a blue background', 'a group of people posing for a picture near a river', 'a large fish swimming in the ocean', 'a group of tuna swim in the ocean']
+2024-05-16 22:49:17,949 - app.model - INFO - Generated caption: ['a graph showing the monthly pattern of forenames', 'a group of colored pencils are shown on a table', 'the world cup 2019 logo is shown in a circle', 'a map showing the percentage of people who are affluent']
+2024-05-16 22:49:18,593 - app.model - INFO - Generated caption: ['the world map with different countries and continents', 'mexico trades more with taiwan than with asia', 'a purple and white gradient with a rainbow effect', 'a graph showing the number of people who have been killed by the ctv system']
+2024-05-16 22:49:19,061 - app.model - INFO - Generated caption: ['a graph showing the sales of a company', 'a pie chart showing the percentage of the pie', "a graph showing the world's largest plastic production", 'a map of the world with different countries']
+2024-05-16 22:49:19,763 - app.model - INFO - Generated caption: ['a map of europe with different countries', 'a graph showing the number of people who have been killed by a swine flu outbreak', 'a graph showing the growth of the tv industry', 'a graph showing the percentage of the population that is in debt']
+2024-05-16 22:49:20,306 - app.model - INFO - Generated caption: ['the top 10 most popular social media platforms', 'the number of people who have a sex partner', 'a chart showing the number of people who are in the top 10', 'a map of the city with blue lines']
+2024-05-16 22:49:20,837 - app.model - INFO - Generated caption: ['a map showing the amount of wildfires in the united states', 'a graph showing the number of shares of a company', 'the most expensive ad in the world', 'the world spends more than it makes']
+2024-05-16 22:50:12,351 - app.model - INFO - Generated caption: ['nvidia gtx 1070 gtx 1070 gtx 1070 gtx 1070 gtx', 'a building with a large roof and a large parking lot', 'a restaurant with a sign on the side of the road', 'an aerial view of the city of san francisco']
+2024-05-16 22:50:13,346 - app.model - INFO - Generated caption: ['a building with a large green grassy area', 'geforce titan x gtx 1080 ti gtx 1080 ti gtx 1080 ti', "nvidia's new headquarters in sydney", 'a graph showing the nvda stock price']
+2024-05-16 22:50:13,961 - app.model - INFO - Generated caption: ['a tablet with a controller and a pen on it', 'the golden gate bridge is seen from the skyline of san francisco', 'a black background with a plane flying in the sky', 'a computer with a ram and a memory chip']
+2024-05-16 22:50:14,357 - app.model - INFO - Generated caption: ['a black background with a plane flying in the sky']
+2024-05-16 22:52:15,546 - app.model - INFO - Generated caption: ['a book with a page of writing on it', 'a graph with money and coins']
+2024-05-16 22:54:15,573 - app.model - INFO - Generated caption: ['the 2012 olympic male athletes weight']
+2024-05-16 22:56:02,848 - app.model - INFO - Generated caption: ['turkish flag with a star and crescent', 'the coat of arms of turkey', 'the ottoman empire in 18th century ad', 'a black background with a plane flying in the sky']
+2024-05-16 22:56:03,336 - app.model - INFO - Generated caption: ['a black background with a plane flying in the sky', 'a black background with a plane flying in the sky', 'a black background with a plane flying in the sky', 'a black background with a plane flying in the sky']
+2024-05-16 22:56:03,829 - app.model - INFO - Generated caption: ['a black background with a plane flying in the sky', 'a black background with a plane flying in the sky', 'a black background with a plane flying in the sky', 'a black background with a plane flying in the sky']
+2024-05-16 22:56:04,318 - app.model - INFO - Generated caption: ['a black background with a plane flying in the sky', 'a black background with a plane flying in the sky', 'a black background with a plane flying in the sky', 'a black background with a plane flying in the sky']
+2024-05-16 22:56:04,789 - app.model - INFO - Generated caption: ['a black background with a plane flying in the sky', 'a black background with a plane flying in the sky', 'a black background with a plane flying in the sky', 'a black background with a plane flying in the sky']
+2024-05-16 22:56:05,270 - app.model - INFO - Generated caption: ['a black background with a plane flying in the sky', 'a black background with a plane flying in the sky', 'a black background with a plane flying in the sky', 'a black background with a plane flying in the sky']
+2024-05-16 22:56:05,752 - app.model - INFO - Generated caption: ['a black background with a plane flying in the sky', 'a black background with a plane flying in the sky', 'a black background with a plane flying in the sky', 'a black background with a plane flying in the sky']
+2024-05-16 22:56:06,248 - app.model - INFO - Generated caption: ['a black background with a plane flying in the sky', 'a black background with a plane flying in the sky', 'a black background with a plane flying in the sky', 'a black background with a plane flying in the sky']
+2024-05-16 22:56:06,736 - app.model - INFO - Generated caption: ['a black background with a plane flying in the sky', 'a black background with a plane flying in the sky', 'a black background with a plane flying in the sky', 'a black background with a plane flying in the sky']
+2024-05-16 22:56:07,212 - app.model - INFO - Generated caption: ['a black background with a plane flying in the sky', 'a black background with a plane flying in the sky', 'a black background with a plane flying in the sky', 'a black background with a plane flying in the sky']
+2024-05-16 22:56:07,710 - app.model - INFO - Generated caption: ['a black background with a plane flying in the sky', 'a black background with a plane flying in the sky', 'a black background with a plane flying in the sky', 'an old map of turkey and the surrounding area']
+2024-05-16 22:56:08,344 - app.model - INFO - Generated caption: ['turkish flag with a star on it', 'a painting of a battle between people and soldiers', 'the coat of arms of turkey', 'a painting of a man on horseback with men in front of him']
+2024-05-16 22:56:08,968 - app.model - INFO - Generated caption: ['the cover of a book with a picture of a man and woman', 'a painting of a man with a white turban', 'a painting of a woman in a green dress', 'a map of the ancient rome']
+2024-05-16 22:56:09,557 - app.model - INFO - Generated caption: ['a painting of a battle scene with people and soldiers', 'a painting shows a battle scene with people on horses', 'a painting of a battle between two armies', 'a painting of a group of people in a courtyard']
+2024-05-16 22:56:10,105 - app.model - INFO - Generated caption: ['a painting of men on horses in front of a building', 'a drawing of a large hall with people in it', 'the battle of the somme', 'a map of the middle east with the turkish empire']
+2024-05-16 22:56:10,693 - app.model - INFO - Generated caption: ['a group of men in uniform standing in front of a building', 'a group of men in uniform standing next to each other', 'a group of men walking down a street', 'a group of men in uniform standing in front of a door']
+2024-05-16 22:56:11,216 - app.model - INFO - Generated caption: ['a painting of a room with people in it', 'a blue and white tiled room with a staircase', 'a group of men in a parade', 'a drawing of men sitting around a table']
+2024-05-16 22:56:12,270 - app.model - INFO - Generated caption: ['a painting of a man and woman in a room', 'a painting of men on horses with a flag', 'a picture of a group of men in uniform', 'turkish navy - turkish navy - turkish navy - turkish navy - turkish']
+2024-05-16 22:56:12,984 - app.model - INFO - Generated caption: ['a group of men standing next to an airplane', 'a map of the middle east with the borders of the mediterranean', 'a gold medal with a woman in a hat', 'a building with a large door on the side']
+2024-05-16 22:56:13,577 - app.model - INFO - Generated caption: ['an old photo of a city street with people walking', 'old photo of a city with boats and people', 'a poster with arabic writing on it', 'a man in a suit sitting in an ornate chair']
+2024-05-16 22:56:14,114 - app.model - INFO - Generated caption: ['two men in robes are standing next to each other', 'a map of the turkish empire', 'a church with a lot of pictures on display', 'the coat of arms of turkey']
+2024-05-16 22:56:14,696 - app.model - INFO - Generated caption: ['a drawing of a group of men sitting around a table', 'a group of people sitting around a table in an old photo', 'a drawing of a man in a turban', 'a mosque with a large dome and two minarets']
+2024-05-16 22:56:15,248 - app.model - INFO - Generated caption: ['a painting of a city with people and trees', 'a painting of men on horses and men on horses', 'two men in costumes are standing next to each other', 'a painting of people in traditional clothing']
+2024-05-16 22:56:15,853 - app.model - INFO - Generated caption: ['a painting of a woman and two women in a field', 'a painting of people on a hill', 'a painting of a woman and children in a kitchen', 'a painting of men working at a table']
+2024-05-16 22:56:16,381 - app.model - INFO - Generated caption: ['a painting of a woman sitting on a rug', 'a group of men posing for a photo', 'a group of men posing for a photo', 'turkish flag with a star and crescent']
+2024-05-16 22:56:16,994 - app.model - INFO - Generated caption: ['the coat of arms of turkey', 'a blue background with a white star and crescent', 'the logo for the organization of turkish states', "a chart showing the history of the world's most important countries"]
+2024-05-16 22:57:02,482 - app.model - INFO - Generated caption: ['a man in a suit and tie standing next to a flag']
+2024-05-16 22:57:28,766 - app.model - INFO - Generated caption: ['a gold star with purple outlines', 'a statue of a woman standing in a field', 'the map of the mongol empire', 'a painting of a group of people in a room']
+2024-05-16 22:57:29,142 - app.model - INFO - Generated caption: ['a painting of a woman and her husband']
+2024-05-16 22:57:40,623 - app.model - INFO - Generated caption: ['a woman is performing on a balance beam', 'a boat is in the water', 'a boat is in the water', 'three women in a red robe with medals']
+2024-05-16 22:57:41,195 - app.model - INFO - Generated caption: ['british flag png', 'olympic rings png', 'a man doing push ups on a mat', 'a stamp with the image of the olympic stadium']
+2024-05-16 22:57:41,819 - app.model - INFO - Generated caption: ['a man in a suit and tie is talking to a microphone', 'a man in a yellow and black shirt is holding a baton', 'a map of the united states with green highlighted', 'the flag of saudi arabia']
+2024-05-16 22:57:42,429 - app.model - INFO - Generated caption: ['a group of people playing a game of esports', 'ufc logo with red letters', 'a man in a goggles and a snorkel holding a rope', 'iceland flag - wikipedia']
+2024-05-16 22:57:42,870 - app.model - INFO - Generated caption: ['a basketball player is holding a ball in his hand', 'common wealth stadium logo']
+2024-05-16 22:57:53,392 - app.model - INFO - Generated caption: ['chinese characters in red and blue', 'a blue and white folder with a yellow background', 'a blue wave with a blue arrow', 'a blue and white logo with a polar bear in it']
+2024-05-16 22:57:53,924 - app.model - INFO - Generated caption: ['the logo of the united states judicial system', 'a blue and red logo with a red flame', 'the logo of a company with a triangle in the middle', 'a blue and white logo with a globe']
+2024-05-16 22:57:54,387 - app.model - INFO - Generated caption: ['a red, green and blue square on a black background', 'a blue and green logo with a red ball in it']
+2024-05-16 22:58:44,233 - app.model - INFO - Generated caption: ['a black background with a plane flying in the sky', 'a blue button with an i in it']
+2024-05-16 23:00:17,697 - app.model - INFO - Generated caption: ['a map of the united states with different colors']
+2024-05-16 23:00:45,405 - app.model - INFO - Generated caption: ['a black and white arrow with a v in the middle', 'a black background with a plane flying in the sky', 'the logo of the person']
+2024-05-16 23:01:08,442 - app.model - INFO - Generated caption: ['wikipedia - wikipedia - wikipedia - wikipedia - wikipedia - wikipedia - wikipedia - wikipedia -', 'a close up of a brown and yellow tree', 'a man in a suit and tie standing next to a flag', 'a woman standing on a mountain top with a hat']
+2024-05-16 23:01:08,981 - app.model - INFO - Generated caption: ['a castle sits on top of a mountain with snow on it', 'a blue and red logo with a red flower', 'a colorful gear wheel on a black background', 'a green and blue logo with a circle in the middle']
+2024-05-16 23:01:09,506 - app.model - INFO - Generated caption: ['a blue and white icon with a white background', 'a red, green, and blue bar with a black background', 'a blue globe with a blue circle', 'a blue wave with a blue circle on it']
+2024-05-16 23:01:10,027 - app.model - INFO - Generated caption: ['a blue and white logo with a polar bear in it', 'a blue and green logo with a ball in it', 'the university of nebraska logo', 'the logo of a company with a triangle in the middle']
+2024-05-16 23:01:10,401 - app.model - INFO - Generated caption: ['chinese characters in blue and red', 'a wikimedia project logo', 'mediawiki - powered by mediawiki']
+2024-05-16 23:02:03,506 - app.model - INFO - Generated caption: ['a large building with a parking lot', "a diagram of the airport's terminals and facilities", 'a satellite image of a desert area with a large airport', 'an aerial view of a city']
+2024-05-16 23:02:03,943 - app.model - INFO - Generated caption: ['an aerial view of an airport', 'a view of a city from an airplane', 'a large airport', 'a black and white photo of an airport']
+2024-05-16 23:02:04,512 - app.model - INFO - Generated caption: ['a blue car is parked on the tarmac of an airport', 'an aerial view of an airport and city', 'an aerial view of an airport', 'gsp international airport logo']
+2024-05-16 23:02:05,027 - app.model - INFO - Generated caption: ['minneapolis-st paul international airport', 'an aerial view of an airport and a city', 'lax logo with a black and blue background', 'a city at night with a large obelisk']
+2024-05-16 23:02:05,594 - app.model - INFO - Generated caption: ['an aerial view of a city', 'the logo for etse - a company that provides transportation services']
+2024-05-16 23:02:50,276 - app.model - INFO - Generated caption: ["warren buffett's portfolio infographic"]
+2024-05-16 23:09:40,460 - app.model - INFO - Generated caption: ['a blue and black logo with the words ohm', 'a black refrigerator with stickers on it', 'a coffee grinder sitting on a table', 'a coffee maker with a silver cup on top']
+2024-05-16 23:09:41,017 - app.model - INFO - Generated caption: ['a white ice cream maker sitting on a table', 'a silver grill on a table with other items on top', 'ge sensor microwave oven', 'a black grill with two burners and a grill']
+2024-05-16 23:09:41,599 - app.model - INFO - Generated caption: ['a white washer sitting in a garage', 'a stainless steel stove with a stainless steel oven', 'a stove with a pink tag on it', 'a stove with a stainless steel top and a silver oven']
+2024-05-16 23:09:42,063 - app.model - INFO - Generated caption: ['a keurig coffee maker with a cup of coffee']
+2024-05-16 23:09:49,236 - app.model - INFO - Generated caption: ['a keurig coffee maker with a cup of coffee', 'a vacuum cleaner in a kitchen with hardwood floors', 'dewalt dwv w/ hose for sale in san diego, ca', 'a white avatar of a person']
+2024-05-16 23:13:19,008 - app.model - INFO - Generated caption: ['a blue and black logo with the words ohm', 'a speaker is sitting on a table in a room', 'a black xbox sat on top of a desk', 'a blue heron standing in the water']
+2024-05-16 23:13:20,070 - app.model - INFO - Generated caption: ['a diamond certificate with a diamond on it', 'a camper van parked in a parking lot', 'marshall mcfly mcfly mcfly mcfly mcfly mcfly', 'a silver bracelet with a tag on it']
+2024-05-16 23:13:20,580 - app.model - INFO - Generated caption: ['a guitar case with a guitar inside', 'a sofa with a grey fabric and white background', 'two zebra print pillows on a carpet', 'a white chair with a white cushion']
+2024-05-16 23:13:21,462 - app.model - INFO - Generated caption: ['marshall mcfly mcfly mcfly mcfly mcfly mcfly']
+2024-05-16 23:13:36,660 - app.model - INFO - Generated caption: ['a tripod with the word proline on it', 'a framed picture of a girl and a cow', 'a silver phone with a small plastic cover', 'a small black device with the word euly on it']
+2024-05-16 23:13:37,173 - app.model - INFO - Generated caption: ['instago one action camera in the box', 'a white camera on a wooden table', 'a camera with a battery and other accessories', 'a camera with a lens attached to it']
+2024-05-16 23:13:37,706 - app.model - INFO - Generated caption: ['a lens is sitting on top of a table', 'a white cat sleeping in a pile of clothes', 'a digital camera with a light meter and a case']
+2024-05-16 23:14:03,378 - app.model - INFO - Generated caption: ['a lens is sitting on top of a table', 'a lens sitting on a table next to a computer', 'a green backpack with black straps on the floor', 'canon ef-s f/2.8 sm f/2.8 sm lens']
+2024-05-16 23:14:03,666 - app.model - INFO - Generated caption: ['a white avatar of a person']
+2024-05-16 23:17:59,456 - app.model - INFO - Generated caption: ['a blue and black logo with the words ohm', 'a stapler with a blue handle on top', 'a wooden plate with a bullfighter on it', 'a painting of a woman sitting on a table']
+2024-05-16 23:17:59,981 - app.model - INFO - Generated caption: ['a woman wearing a turban and pearls', 'a painting of a woman holding a red bird', 'john sextoon listen to the trees', 'a sewing machine on a table in a garage']
+2024-05-16 23:18:00,575 - app.model - INFO - Generated caption: ['a painting of a castle with a bridge', 'a framed painting of a city scene', 'a bunch of wicker baskets hanging from a car', 'a black sculpture with a head and a tail']
+2024-05-16 23:18:00,970 - app.model - INFO - Generated caption: ['a small electric drill sitting on a wooden floor']
+2024-05-16 23:18:03,760 - app.model - INFO - Generated caption: ['a group of people in a bullring']
+2024-05-16 23:18:10,684 - app.model - INFO - Generated caption: ['a group of people in a bullring']
+2024-05-16 23:18:17,185 - app.model - INFO - Generated caption: ['a group of people in a bullring']
